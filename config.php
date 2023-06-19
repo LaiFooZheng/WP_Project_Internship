@@ -1,15 +1,15 @@
 <?php
 $servername = "localhost";
-$username = "username";
+$user_name = "username";
 $password = "password";
 $database = "internship";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $internship);
+$conn = mysqli_connect($servername, $user_name, $password, $database);
 
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-echo "Connected successfully";
+echo "Connected successfully\n";
 ?>
