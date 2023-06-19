@@ -2,78 +2,56 @@
 INSERT INTO users
 VALUES (
         1,
-        "jlteh@gmail.com",
-        "Teh Jing Ling",
-        "123, Lucky Home",
+        "foozheng@gmail.com",
+        "Lai Foo Zheng",
+        "66, Taman Daya",
         21,
-        "012-3456789"
+        "018-265-3007"
     );
 INSERT INTO users
 VALUES (
         2,
-        "eunice@gmail.com",
-        "Lim Xian Ni",
-        "456, Lucky Home",
+        "adamm@gmail.com",
+        "Muhammad Adam Bin Yaacob",
+        "234, Taman Universiti",
         21,
-        "011-7895456"
+        "019-771-5162"
     );
 INSERT INTO users
 VALUES (
         3,
-        "yxsiew@gmail.com",
-        "Siew Yu Xuan",
-        "789, Lucky Home",
+        "weilong@gmail.com",
+        "Ang Wei Long",
+        "88, Taman Daya",
         21,
-        "012-5675434"
+        "017-7276326"
     );
 INSERT INTO users
 VALUES (
         4,
-        "theresa@gmail.com",
-        "Lau Xin Yi",
-        "122, Lucky Home",
+        "weichun@gmail.com",
+        "Ho Wei Chun",
+        "24, Taman Mutiara",
         21,
-        "017-5674323"
-    );
-INSERT INTO users
-VALUES (
-        5,
-        "joshua@gmail.com",
-        "Lai Chee Yee",
-        "145, Lucky Home",
-        21,
-        "014-4563234"
-    );
-INSERT INTO users
-VALUES (
-        6,
-        "yczhu@gmail.com",
-        "Zhu Yi Chen",
-        "777, Lucky Home",
-        20,
-        "013-5673456"
+        "017-7449148"
     );
 
 -- Populate Login Table
 INSERT INTO login
-VALUES ("jacklyn", "jacklyn@123", 1, 1);
+VALUES ("foozheng", "foozheng", 1, 1);
 INSERT INTO login
-VALUES ("eunice", "eunice@123", 2, 2);
+VALUES ("adamm", "adamm", 2, 2);
 INSERT INTO login
-VALUES ("yuxuan", "yuxuan@123", 3, 3);
+VALUES ("wlong", "wlong", 3, 3);
 INSERT INTO login
-VALUES ("theresa", "theresa@123", 3, 4);
-INSERT INTO login
-VALUES ("joshua", "joshua@123", 3, 5);
-INSERT INTO login
-VALUES ("rebecca", "rebecca@123", 3, 6);
+VALUES ("weichun", "weichun", 3, 4);
 
 -- Populate Practical Training Table
 INSERT INTO practical_training
 VALUES (
         1,
         "Intel/Back-End",
-        "27-Jun-2022",
+        "12-Jun-2023",
         "submitted",
         3
     );
@@ -81,7 +59,7 @@ INSERT INTO practical_training
 VALUES (
         2,
         "Google/Back-End",
-        "12-Jun-2022",
+        "12-Jun-2023",
         "Approve",
         3
     );
@@ -89,7 +67,7 @@ INSERT INTO practical_training
 VALUES (
         3,
         "Intel/Network",
-        "14-Jun-2022",
+        "14-Jun-2023",
         "submitted",
         3
     );
@@ -97,7 +75,7 @@ INSERT INTO practical_training
 VALUES (
         4,
         "Google/Front-End",
-        "14-Jun-2022",
+        "14-Jun-2023",
         "submitted",
         4
     );
@@ -105,7 +83,7 @@ INSERT INTO practical_training
 VALUES (
         5,
         "Intel/Full-stack",
-        "24-May-2022",
+        "24-May-2023",
         "Reject",
         4
     );
@@ -113,52 +91,52 @@ INSERT INTO practical_training
 VALUES (
         6,
         "Google/Back-End",
-        "24-Jun-2022",
+        "24-Jun-2023",
         "submitted",
         5
     );
 INSERT INTO practical_training
-VALUES (7, "Intel/Back-End", "21-Jun-2022", "Reject", 5);
+VALUES (7, "Intel/Back-End", "21-Jun-2023", "Reject", 5);
 INSERT INTO practical_training
 VALUES (
         8,
         "Miscrosoft/Back-End",
-        "12-Jun-2022",
+        "12-Jun-2023",
         "submitted",
         6
     );
 INSERT INTO practical_training
-VALUES (9, "Intel/Back-End", "30-Jun-2022", "Approve", 6);
+VALUES (9, "Intel/Back-End", "30-Jun-2023", "Approve", 6);
 INSERT INTO practical_training
 VALUES (
         10,
         "Miscrosoft/UIUX-dessigner",
-        "24-Jun-2022",
+        "24-Jun-2023",
         "submitted",
         6
     );
 
 -- Populate User Detail Table
 INSERT INTO user_detail
-VALUES ("Female", "A088", "Malaysia", 1);
+VALUES ("Male", "A088", "Malaysia", 1);
 INSERT INTO user_detail
-VALUES ("Female", "A088", "Malaysia", 2);
+VALUES ("Male", "A088", "Malaysia", 2);
 INSERT INTO user_detail
-VALUES ("Female", "A088", "Malaysia", 3);
+VALUES ("Male", "A088", "Malaysia", 3);
 INSERT INTO user_detail
-VALUES ("Female", "A001", "Malaysia", 4);
+VALUES ("Male", "A001", "Malaysia", 4);
 INSERT INTO user_detail
-VALUES ("Female", "A001", "Malaysia", 5);
+VALUES ("Male", "A001", "Malaysia", 5);
 INSERT INTO user_detail
 VALUES ("Male", "A021", "Malaysia", 6);
 INSERT INTO user_detail
 VALUES ("Male", "A021", "Malaysia", 7);
 INSERT INTO user_detail
-VALUES ("Female", "A004", "Malaysia", 8);
+VALUES ("Male", "A004", "Malaysia", 8);
 INSERT INTO user_detail
-VALUES ("Female", "A004", "Malaysia", 9);
+VALUES ("Male", "A004", "Malaysia", 9);
 INSERT INTO user_detail
-VALUES ("Female", "A004", "Malaysia", 10);
+VALUES ("Male", "A004", "Malaysia", 10);
 
 -- Populate Company Table
 INSERT INTO company
@@ -168,8 +146,8 @@ VALUES (
         "intel@gmail.com",
         "Software",
         "Back-End",
-        "2022-06-23",
-        "2022-07-23",
+        "2023-06-23",
+        "2023-07-23",
         1
     ),
     (
@@ -178,8 +156,8 @@ VALUES (
         "intel@gmail.com",
         "Network",
         "Network",
-        "2022-06-23",
-        "2022-08-23",
+        "2023-06-23",
+        "2023-08-23",
         3
     ),
     (
@@ -188,8 +166,8 @@ VALUES (
         "intel@gmail.com",
         "Software",
         "Full-stack",
-        "2022-06-23",
-        "2022-09-23",
+        "2023-06-23",
+        "2023-09-23",
         5
     ),
     (
@@ -198,8 +176,8 @@ VALUES (
         "intel@gmail.com",
         "Software",
         "Back-End",
-        "2022-06-23",
-        "2022-10-23",
+        "2023-06-23",
+        "2023-10-23",
         7
     ),
     (
@@ -208,8 +186,8 @@ VALUES (
         "intel@gmail.com",
         "Software",
         "Back-End",
-        "2022-06-23",
-        "2022-11-23",
+        "2023-06-23",
+        "2023-11-23",
         9
     ),
     (
@@ -218,8 +196,8 @@ VALUES (
         "google@gmail.com",
         "Software",
         "Back-End",
-        "2022-06-23",
-        "2022-12-23",
+        "2023-06-23",
+        "2023-12-23",
         2
     ),
     (
@@ -228,8 +206,8 @@ VALUES (
         "google@gmail.com",
         "Software",
         "Front-End",
-        "2022-06-23",
-        "2022-07-23",
+        "2023-06-23",
+        "2023-07-23",
         4
     ),
     (
@@ -238,8 +216,8 @@ VALUES (
         "google@gmail.com",
         "Software",
         "Back-End",
-        "2022-06-23",
-        "2022-08-23",
+        "2023-06-23",
+        "2023-08-23",
         6
     ),
     (
@@ -248,8 +226,8 @@ VALUES (
         "miscrosoft@gmail.com",
         "Software",
         "Back-End",
-        "2022-06-23",
-        "2022-09-23",
+        "2023-06-23",
+        "2023-09-23",
         8
     ),
     (
@@ -258,7 +236,7 @@ VALUES (
         "miscrosoft@gmail.com",
         "Software",
         "UIUX-dessigner",
-        "2022-06-23",
-        "2022-10-23",
+        "2023-06-23",
+        "2023-10-23",
         10
     );
