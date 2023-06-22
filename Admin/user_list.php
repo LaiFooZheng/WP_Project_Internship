@@ -30,15 +30,14 @@
 
             <tbody>
                 <?php
-                //Call connection to database
                 require_once("../config.php");
-                
-                //Retrieve data from table
+
+                // Retrieve data from table
                 $sql1 = mysqli_query($conn, "SELECT * FROM users") or die(mysqli_connect_error());
                 $sql2 = mysqli_query($conn, "SELECT * FROM login") or die(mysqli_connect_error());
 
                 if (mysqli_num_rows($sql1) > 0) {
-                    //Output data of each row
+                    // Output data of each row
                     while ($row = mysqli_fetch_array($sql1)) {
                         $row2 = mysqli_fetch_array($sql2);
                         echo "
