@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
 	<?php
 	$fullname = $_POST["fullname"];
 	$username = $_POST["username"];
@@ -37,7 +36,6 @@
 		echo "User cannot be created\n";
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}
-	
 	
 	mysqli_close($conn);
 	?>

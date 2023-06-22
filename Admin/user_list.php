@@ -58,7 +58,7 @@
                         echo "
                             </td>
                             <td>
-                                <a class='btn btn-primary btn-sm' href='edit_user.php?id=$row[userid]'>Edit</a>
+                                <a class='btn btn-primary btn-sm' href='edit_user_form.php?id=$row[userid]'>Edit</a>
                                 <a class='btn btn-danger btn-sm' href='delete_user.php?id=$row[userid]'>Delete</a>
                                 <a class='btn btn-danger btn-sm' href='view_user.php?id=$row[userid]'>View</a>
                             </td>
