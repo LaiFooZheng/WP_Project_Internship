@@ -54,7 +54,8 @@ if (mysqli_num_rows($tab1) == 1) {
         <div class="row mb-3">
             <label class="col-sm-3 col-form-label">Password</label>
             <div class="col-sm-6">
-                <input type="password" <?php echo $password;?>>
+            <!-- <input type="password" class="form-control" value="********" disabled> -->
+                <input type="password" class="form-control" value="********" disabled <?php echo $password;?>>
             </div>
         </div>
         <!-- maybe add a password confirmation field -->

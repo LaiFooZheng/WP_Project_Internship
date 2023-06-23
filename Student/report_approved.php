@@ -24,7 +24,6 @@
                     <th>Date Applied</th>
                     <th>Title</th>
                     <th>Status</th>
-                    <th>Action</th>
                 </tr>
             </thead>
 
@@ -43,7 +42,7 @@
 
                     // Retrieve data from the table
                     $array = array();
-                    $select = "SELECT * FROM practical_training WHERE fk_userid = $studentId";
+                    $select = "SELECT * FROM practical_training WHERE fk_userid = $studentId WHERE applicationstatus = 'Approved'";
                     $sql = mysqli_query($GLOBALS['conn'], $select);
 
                     // Check if the query executed successfully
@@ -59,12 +58,7 @@
                                   <td>$profile[name]</td>
                                   <td>$row[applicationdate]</td>  
                                   <td>$row[applicationtitle]</td>
-                                  <td>$row[applicationstatus]</td>
-                                  <td>
-                                      <a class='btn btn-primary btn-sm' href='edit_student_application.php?id=$row[applicationid]'>Edit</a>
-                                      <a class='btn btn-danger btn-sm' href='delete_student_application.php?id=$row[applicationid]'>Delete</a>
-                                      <a class='btn btn-dark btn-sm' href='view_student_application.php?id=$row[applicationid]'>View</a>
-                                  </td>
+                                  <td>$row[applicationstatus]</td>  
                               </tr> 
                               ";
                             }
