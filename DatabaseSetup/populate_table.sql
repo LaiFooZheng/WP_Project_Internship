@@ -51,7 +51,7 @@ VALUES (
         1,
         "Intel/Back-End",
         "12-Jun-2023",
-        "submitted",
+        "Submitted",
         3
     );
 INSERT INTO practical_training
@@ -59,7 +59,7 @@ VALUES (
         2,
         "Google/Back-End",
         "12-Jun-2023",
-        "Approve",
+        "Approved",
         3
     );
 INSERT INTO practical_training
@@ -67,7 +67,7 @@ VALUES (
         3,
         "Intel/Network",
         "14-Jun-2023",
-        "submitted",
+        "Submitted",
         3
     );
 INSERT INTO practical_training
@@ -75,7 +75,7 @@ VALUES (
         4,
         "Google/Front-End",
         "14-Jun-2023",
-        "submitted",
+        "Submitted",
         4
     );
 -- -- Populate User Detail Table

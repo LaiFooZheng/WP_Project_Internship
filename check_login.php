@@ -34,7 +34,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['user
 		if ($_SESSION['LEVEL'] == "1") {
 			header("Location: Admin/admin_page.php");
 		} else if ($_SESSION['LEVEL'] == "2") {
-			header("Location: coordinator.html");
+			header("Location: Coordinator/coordinator_page.php");
 		}
 		if ($_SESSION['LEVEL'] == "3") {
 			header("Location: Student/student_page.php");
