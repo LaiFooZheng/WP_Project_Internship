@@ -5,39 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students Practical Training Management</title>
-    <link rel="shortcut icon" href="images/transparent-logo.png" type="image/x-icon">
+    <title>KUN Internship Management</title>
+    <link rel="shortcut icon" href="/img/2.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cousine&family=Montserrat:ital,wght@0,400;1,200&display=swap"
         rel="stylesheet">
 </head>
-
-<body>
-    <div class="login-page">
-        <div class="form">
-            <div class="container-logo">
-                <a href="login.html"><img src="images/transparent-logo.png" alt="Logo" id="img-logo1"></a>
-                <p class="title">Students' Practical Training Management System</p>
-            </div>
-            <h1 style="color: white;">WELCOME</h1>
-
-            <form class="register-form" method="post" action="check_login.php">
-                <input type="text" name="username" placeholder="Username" required>
-                <br> <br>
-                <input type="password" name="password" placeholder="Password" required>
-                <br> <br>
-                <select class="select" style="width: 150px;" name="userlevel" required>
-                    <option value="" selected="selected"> - select role - </option>
-                    <option value="1">Admin</option>
-                    <option value="2">Coordinator</option>
-                    <option value="3">Student</option>
-                </select>
-                <br><br>
-                <input class="sign-in-button" type="submit" value="Sign In">
-            </form>
+<div id="wrapper">
+    <div id="left">
+      <div id="signin">
+        <div class="logo">
+          <img src="/img/2.png" alt="KUN Internship" />
         </div>
+        <form class="register-form" method="post" action="check_login.php">
+          <div>
+            <label>Username</label>
+            <input type="text" name="username" class="text-input" required/>
+          </div>
+          <div>
+            <label>Password</label>
+            <input type="password" name="password" class="text-input" required/>
+          </div>
+          <div>
+            <label>Role</label>
+            <select id="role-input" name="userlevel" required>
+                <option value="" selected >- Select Role -</option>
+                <option value="Student" >Student</option>
+                <option value="Admin">Admin</option>
+                <option value="Coordinator">Coordinator</option>
+              </select>
+          </div>
+          <button type="submit" class="primary-btn">Sign In</button>
+        </form>
+      </div>
+      <footer id="main-footer">
+        <p>Copyright &copy; 2023, KunKun All Rights Reserved</p>
+      </footer>
     </div>
-</body>
 
-</html>
+  </div>
