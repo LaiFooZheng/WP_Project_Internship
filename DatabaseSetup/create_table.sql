@@ -1,3 +1,5 @@
+USE internship;
+
 CREATE TABLE IF NOT EXISTS users(
     userid int(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     email varchar(30) NOT NULL,
