@@ -30,7 +30,7 @@
             </button>
             <div class="dropdown-content">
                 <a href="Student/edit_student_profile.php">Profile</a>
-                <a href="login.html">Log out</a>
+                <a href="../login.html">Log out</a>
             </div>
         </div>
     </div>
@@ -39,7 +39,7 @@
     <nav class="stroke">
         <ul>
             <li><a href="student_page.php">Home</a></li>
-            <li><a href="Student/application_homepage.php">Apply</a></li>
+            <li><a href="student_application_list.php">Apply</a></li>
             <li><a href="Student/report_homepage.php">Report</a></li>
         </ul>
     </nav>
