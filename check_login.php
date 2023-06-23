@@ -37,7 +37,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['user
 			header("Location: coordinator.html");
 		}
 		if ($_SESSION['LEVEL'] == "3") {
-			header("Location: student.html");
+			header("Location: Student/student_page.php");
 		}
 	}
 	//if wrong username and password
