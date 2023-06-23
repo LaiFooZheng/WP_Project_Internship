@@ -16,7 +16,6 @@
 </head>
 
 <body> 
-    <!-- <?php include('coordinator.html'); ?> -->
 
     <div class="outercontainer-nav">
         <div class="container-logo">
@@ -91,7 +90,9 @@
         <input class="co-homepage-submit" type="submit" value="Submit"> <!--added value-->
     </form>
     </div>
-
+    <?php
+    include('../includes/footer.php');
+    ?>
 </body>
 
 </html>
