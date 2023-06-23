@@ -57,7 +57,7 @@
         <b><a href="ViewSortedSubmission.php"><label class="co-homepage-btn">View Sorted Submission</label></a></b>
     </div>
 
-    <form action="SearchingUsers.php" method="post">
+    <form action="../search_student.php" method="POST">
         <div class="co-homepage-table">
             <span class="profile">Search Student's Profile:</span>
             <input type="text" class="co-homepage-input" name="search" />
@@ -70,12 +70,12 @@
                 <option value="userid">User ID</option>
             </select>
             <br>
-            <input class="co-homepage-submit" type="submit" value="Submit"> <!--added value-->
+            <input class="co-homepage-submit" type="submit" value="Search"> <!--added value-->
     </form>
 
     <br> <br>
 
-    <form action="SearchingRecord.php" method="post">
+    <form action="../search_student_application.php" method="POST">
         <span class="profile">Search Student's Practical Training Report:</span>
         <input class="co-homepage-input" type="text" name="search"><br>
 
@@ -87,7 +87,7 @@
             <option value="applicationtitle">Application Title</option>
             <option value="applicationdate">Application Date</option>
         </select><br>
-        <input class="co-homepage-submit" type="submit" value="Submit"> <!--added value-->
+        <input class="co-homepage-submit" type="submit" value="Search"> <!--added value-->
     </form>
     </div>
 

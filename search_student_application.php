@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Application List</title>
+    <title>Search Application List</title>
     <!-- Bootstrap Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 
@@ -13,13 +13,14 @@
 
 <body>
     <div class="container my-5">
-        <h2>Full Application List</h2>
-        <p><i>Full List Only Accessible to Admins and Coordinators</i></p>
+        <h2>Search Application List</h2>
+        <p><i>Accessible to Coordinators</i></p>
         <!-- <a class="btn btn-primary" href="user_form.php" role="button">Add User</a> -->
         <br>
         <table class="table">
             <thead>
                 <tr>
+                    <th>No.</th>
                     <th>Application ID</th>
                     <th>Applicant</th>
                     <th>Date Applied</th>
@@ -31,13 +32,17 @@
 
             <tbody>
                 <?php
+                $search = $_POST['search'];
+                $column = $_POST['column'];
+
                 require_once("config.php");
                 require_once("functions.php");
 
                 // Retrieve data from table
                 $array = array();
-                $select = "SELECT * from practical_training";
+                $select = "SELECT * from practical_training WHERE $column LIKE '%$search%'";
                 $sql = mysqli_query($GLOBALS['conn'], $select);
+                $count = 1;
 
                 if (mysqli_num_rows($sql) > 0) {
                     // Output data of each row
@@ -46,6 +51,7 @@
                         $profile = getUsersData($array['userid']);
                         echo "
                         <tr>
+                            <td>$count</td>
                             <td>$row[applicationid]</td>
                             <td>$profile[name]</td>
                             <td>$row[applicationdate]</td>
@@ -58,6 +64,7 @@
                             </td>
                         </tr> 
                         ";
+                        $count++;
                     }
                 } else {
                     echo "0 results";
