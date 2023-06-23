@@ -36,8 +36,11 @@ if (mysqli_num_rows($tab1) == 1) {
 </head>
 
 <body>
+    <?php
+    include('../includes/headerAdmin.html');
+    ?>
     <div class="container my-5">
-        <h2>Edit User</h2>
+        <h2 style="text-align:center; font-weight:bold;">Edit User</h2>
         <form method="post" action="update_user.php">
             <input type="hidden" name="id" value="<?php echo $id; ?>"> <!-- hidden element -->
             <div class="row mb-3">
@@ -97,6 +100,9 @@ if (mysqli_num_rows($tab1) == 1) {
             </div>
         </form>
     </div>
+    <?php
+    include('../includes/footer.php');
+    ?>
 </body>
 
 </html>
