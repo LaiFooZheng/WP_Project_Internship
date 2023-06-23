@@ -1,21 +1,19 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="/Admin/adminstyle.css">
     <link rel="shortcut icon" href="../img/2.png" type="image/x-icon">
 </head>
 
 <body>
-    <style>
-        
-    </style>
-    <?php include('admin.html'); ?>
+    <?php
+    include('../includes/headerAdmin.html');
+    ?>
 
     <div class="industry-background">
         <img src="../img/background-img3.jpg" style="width: 100%;">
         <div class="homepage-caption">
             <p style="text-align: center;"><b>Best Internship Management System</b></p>
-            <p style="text-align: center;"><i><b>"RECOMENDED BY UTM"</b></i></p>
+            <p style="text-align: center;"><i><b>"RECOMENDED BY MANY INDUSTRY LEADERS"</b></i></p>
         </div>
     </div>
 
@@ -29,6 +27,9 @@
         </div>
     </form>
     <br> <br>
+    <?php
+    include('../includes/footer.php');
+    ?>
 </body>
 
 </html>
