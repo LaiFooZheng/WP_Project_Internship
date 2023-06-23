@@ -13,15 +13,14 @@
 
 <body>
     <div class="container my-5">
-        <h2>Full Application List</h2>
-        <p><i>Full List Only Accessible to Admins and Coordinators</i></p>
-        <!-- <a class="btn btn-primary" href="user_form.php" role="button">Add User</a> -->
+        <h2>Student Application List</h2>
+        <p><i>Students Can Only View their own Applications</i></p>
+        <a class="btn btn-danger" href="../login.html" role="button">LOGOUT</a>
         <br>
         <table class="table">
             <thead>
                 <tr>
                     <th>Application ID</th>
-                    <th>Applicant</th>
                     <th>Date Applied</th>
                     <th>Title</th>
                     <th>Status</th>
@@ -81,37 +80,6 @@
                     echo "Student ID is not set.";
                   }
 
-                // // Retrieve data from table
-                // $array = array();
-                // $studentId = $_SESSION['studentId']; // Assuming you have stored the student ID in the session variable
-
-                // $select = "SELECT * FROM practical_training WHERE fk_userid = $studentId";
-
-                // if (mysqli_num_rows($sql) > 0) {
-                //     // Output data of each row
-                //     while ($row = mysqli_fetch_array($sql)) {
-                //         $array['userid'] = $row['fk_userid'];
-                //         $profile = getUsersData($array['userid']);
-                //         echo "
-                //         <tr>
-                //             <td>$row[applicationid]</td>
-                //             <td>$profile[name]</td>
-                //             <td>$row[applicationdate]</td>
-                //             <td>$row[applicationtitle]</td>
-                //             <td>$row[applicationstatus]</td>
-                //             <td>
-                //                 <a class='btn btn-primary btn-sm' href='edit_user_form.php?id=$row[applicationid]'>Edit</a>
-                //                 <a class='btn btn-danger btn-sm' href='delete_user.php?id=$row[applicationid]'>Delete</a>
-                //                 <a class='btn btn-dark btn-sm' href='view_user.php?id=$row[applicationid]'>View</a>
-                //             </td>
-                //         </tr> 
-                //         ";
-                //     }
-                // } else {
-                //     echo "0 results";
-                // }
-
-                // mysqli_close($conn);
                 ?>
             </tbody>
         </table>
