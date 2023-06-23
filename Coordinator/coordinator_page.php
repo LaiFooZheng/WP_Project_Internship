@@ -8,23 +8,23 @@
     <title>Coordinator</title>
     <link rel="shortcut icon" href="../images/transparent-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="coordinator_page.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cousine&family=Montserrat:ital,wght@0,400;1,200&display=swap"
         rel="stylesheet">
 </head>
 
-<body>
-    <?php include('coordinator.html'); ?>
+<body> 
 
     <div class="outercontainer-nav">
         <div class="container-logo">
-            <a href="coordinator.php"><img src="../images/transparent-logo.png" alt="Logo" id="img-logo"></a>
-            <p class="title">Students' Practical Training Management System</p>
+            <a href="coordinator.php"><img src="../img/1.png" alt="Logo" id="img-logo"></a>
+            <!-- <p class="title">Internship Management System</p> -->
         </div>
 
         <div class="dropdown">
-            <button class="dropbtn-logo"><img src="../images/coordinator.png" alt="Coordinator logo" width="400px">
+            <button class="dropbtn-logo"><img src="../img/coordinator icon.jpg" alt="Coordinator logo" width="400px">
                 <p>COORDINATOR</p>
             </button>
             <div class="dropdown-content">
@@ -42,9 +42,9 @@
     </nav>
 
     <div class="industry-background">
-        <img src="../images/background-img2.jpg" style="width: 100%;">
+        <img src="../img/CoordinatorPageBackground.jpg" style="width: 100%; ">
         <div class="homepage-caption">
-            <p class="cCaption">Best Practical Training Management System</p>
+            <p class="cCaption">Best Internship Management System</p>
             <p class="cCaption2"><i>"RECOMENDED BY MANY INDUSTRY LEADERS"</i></p>
         </div>
     </div>
@@ -76,7 +76,7 @@
     <br> <br>
 
     <form action="SearchingRecord.php" method="post">
-        <span class="profile">Search Student's Practical Training Report:</span>
+        <span class="profile">Search Student's Internship Report:</span>
         <input class="co-homepage-input" type="text" name="search"><br>
 
         <span class="profile">Column:</span>
@@ -90,7 +90,9 @@
         <input class="co-homepage-submit" type="submit" value="Submit"> <!--added value-->
     </form>
     </div>
-
+    <?php
+    include('../includes/footer.php');
+    ?>
 </body>
 
 </html>
