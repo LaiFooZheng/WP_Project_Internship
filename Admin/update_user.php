@@ -43,8 +43,14 @@ mysqli_close($conn);
 </head>
 
 <body>
+    <?php
+    include('../includes/headerAdmin.html');
+    ?>
     <BR><BR>
     <a href="user_list.php">Click here to list the guests</a>
+    <?php
+    include('../includes/footer.php');
+    ?>
 </body>
 
 </html>

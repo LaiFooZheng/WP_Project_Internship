@@ -12,9 +12,12 @@
 </head>
 
 <body>
+    <?php
+    include('../includes/headerAdmin.html');
+    ?>
     <div class="container my-5">
-        <h2>User List</h2>
-        <p><i>Only Accessible to Admins</i></p>
+        <h2 style="text-align:center;"><b>User List</b></h2>
+        <p style="text-align:center;"><i><b>Only Accessible to Admins</b></i></p>
         <a class="btn btn-primary" href="user_form.php" role="button">Add User</a>
         <br>
         <table class="table">
@@ -74,6 +77,9 @@
                 ?>
             </tbody>
         </table>
+    <?php
+    include('../includes/footer.php');
+    ?>
 </body>
 
 </html>
