@@ -2,6 +2,7 @@
 session_start();
 require_once("../config.php");
 
+$userlevel= $_GET["userlevel"];
 
     
   if (isset($_GET["app_id"])) {
@@ -56,9 +57,14 @@ require_once("../config.php");
   $result3 = mysqli_query($conn, $query3) or die(mysqli_error($conn));
 
   if ($result && $result2 && $result3) {
+    if ($userlevel == 1 || $userlevel == 2) {
+      header('location: ../application_list.php');
+    } else if ($userlevel == 3) {
       header('location: student_application_list.php');
+    }
   } else {
-      header('location: student_application_form.php');
+    header('location: ../application_list.php');
+      // header('location: student_application_form.php');
   }
 
 ?>
