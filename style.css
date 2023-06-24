@@ -95,6 +95,8 @@ input[type=submit].button-training,
 
 .admin-links {
     width: 100%;
+    display: flex;
+    justify-content: space-around;
     border: 2px solid black;
     border-radius: 10px;
     background-color: rgba(223, 242, 255, 0.3);
