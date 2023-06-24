@@ -22,8 +22,8 @@
     include('../includes/headerCoordinator.html');
     ?>
     <div class="container my-5">
-        <h2>Pending Application List</h2>
-        <p><i>Pending List Only Accessible to Coordinators</i></p>
+        <h2 style="text-align:center; font-weight:bold">Pending Application List</h2>
+        <p style="text-align:center; font-weight:bold"><i>Pending List Only Accessible to Coordinators</i></p>
         <a class="btn btn-primary" href="sorted_pending_list.php" role="button">Sort List by Date</a>
         <br>
         <table class="table">
@@ -73,7 +73,7 @@
                         $count++;
                     }
                 } else {
-                    echo "0 results";
+                    echo "<a id='echo' style='color:black; text-align:left;'>0 results</a>";
                 }
 
                 mysqli_close($conn);
