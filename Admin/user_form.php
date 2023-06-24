@@ -20,49 +20,49 @@
                 <label class="col-sm-3 col-form-label">Full Name:</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="fullname" value="<?php if (isset($_POST['name']))
-                        echo htmlspecialchars($_POST['name']); ?>">
+                        echo htmlspecialchars($_POST['name']); ?>" required>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Username:</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="username" value="<?php if (isset($_POST['username']))
-                        echo htmlspecialchars($_POST['username']); ?>">
+                        echo htmlspecialchars($_POST['username']); ?>" required>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Password:</label>
                 <div class="col-sm-6">
                     <input type="password" class="form-control" name="password" value="<?php if (isset($_POST['password']))
-                        echo htmlspecialchars($_POST['password']); ?>">
+                        echo htmlspecialchars($_POST['password']); ?>" required>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Email:</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="email" size="30" maxlength="60" value="<?php if (isset($_POST['email']))
-                        echo htmlspecialchars($_POST['email']); ?>">
+                        echo htmlspecialchars($_POST['email']); ?>" required>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Age:</label>
                 <div class="col-sm-6">
                     <input type="number" class="form-control" name="age" min="1" max="100" value="<?php if (isset($_POST['age']))
-                        echo htmlspecialchars($_POST['age']); ?>">
+                        echo htmlspecialchars($_POST['age']); ?>" required>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Phone Number:</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="phone" size="30" maxlength="60" value="<?php if (isset($_POST['phone']))
-                        echo htmlspecialchars($_POST['phone']); ?>">
+                    <input type="number" class="form-control" name="phone" size="30" maxlength="60" value="<?php if (isset($_POST['phone']))
+                        echo htmlspecialchars($_POST['phone']); ?>" required>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Address:</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="address" value="<?php if (isset($_POST['address']))
-                        echo htmlspecialchars($_POST['address']); ?>">
+                        echo htmlspecialchars($_POST['address']); ?>" required>
                 </div>
             </div>
             <!-- dropdown option for the user level -->
@@ -70,7 +70,7 @@
                 <label class="col-sm-3 col-form-label">User Level:</label>
                 <div class="col-sm-6">
                     <input type="number" class="form-control" name="userlevel" min="1" max="3" value="<?php if (isset($_POST['userlevel']))
-                        echo htmlspecialchars($_POST['userlevel']); ?>">
+                        echo htmlspecialchars($_POST['userlevel']); ?>" required>
                 </div>
             </div>
             <div class="row mb-3">
