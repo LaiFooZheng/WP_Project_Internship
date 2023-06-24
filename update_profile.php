@@ -13,18 +13,28 @@ $email = $_POST["email"];
 $age = $_POST["age"];
 $phone = $_POST["phone"];
 $address = $_POST["address"];
-// $userlevel = $_POST["userlevel"];
+$userlevel = $_POST["userlevel"];
 
-$sql1 = "UPDATE users SET email='$email', name='$fullname', age='$age', phone='$phone', address='$address' where userid='$id'";
+$sql1 = "UPDATE users SET email='$email', name='$fullname', age='$age', phone='$phone', address='$address' WHERE userid='$id'";
 mysqli_query($conn, $sql1) or die(mysqli_connect_error());
 
-$sql2 = "UPDATE login SET username='$username', password='$password' where fk_userid='$id'";
+$sql2 = "UPDATE login SET username='$username', password='$password' WHERE fk_userid='$id'";
 mysqli_query($conn, $sql2) or die(mysqli_connect_error());
 
 if (mysqli_query($conn, $sql1)) {
     echo "Record updated successfully";
 } else {
     echo "Error updating record: " . mysqli_error($conn);
+}
+
+echo '<br>';
+
+if ($userlevel == 1) {
+    echo '<a href="Admin/admin_page.php">Click here to Go Back to Admin Page</a>';
+} else if ($userlevel == 2) {
+    echo '<a href="Coordinator/coordinator_page.php">Click here to Go Back to Coordinator Page</a>';
+} else if ($userlevel == 3) {
+    echo '<a href="Student/student_page.php">Click here to Go Back to Student Page</a>';
 }
 mysqli_close($conn);
 ?>
@@ -41,10 +51,10 @@ mysqli_close($conn);
 </head>
 
 <body>
-    <BR><BR>
+    <!-- <BR><BR>
     <script>
         document.write('<a href="' + document.referrer + '">Click here to Go Back</a>');
-    </script>
+    </script> -->
 </body>
 
 </html>

@@ -29,7 +29,7 @@
                 <p>STUDENT</p>
             </button>
             <div class="dropdown-content">
-                <a href="Student/edit_student_profile.php">Profile</a>
+                <a href="../view_profile.php">Profile</a>
                 <a href="../login.html">Log out</a>
             </div>
         </div>
