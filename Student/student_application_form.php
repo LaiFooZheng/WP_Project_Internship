@@ -149,7 +149,7 @@ $row = mysqli_fetch_array($query);
             </div>
             <div class="row mb-3">
                 <div class="offset-sm-3 col-sm-3 d-grid">
-                    <button type="submit" class="btn btn-primary" onclick="return Validate()">Submit</button>
+                    <button type="submit" class="btn btn-success" onclick="return Validate()">Submit</button>
                 </div>
 
                 <script type="text/javascript">

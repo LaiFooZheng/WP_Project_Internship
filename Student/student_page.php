@@ -22,35 +22,6 @@
     <div class="industry-background">
         <img src="../img/studentPageImage.jpg" style="width: 100%;">
     </div>
-
-    <br> <br>
-
-
-    <div class="container-purpose-with-img">
-        <div class="our-purpose-desc">
-            <h3>Our Purpose</h3>
-            <h1 style="color: rgb(26, 26, 26);">Students' Internship Management System</h1>
-            <p>Our purpose is to revolutionize the student internship experience with our innovative Student Internship Management System. 
-                We streamline the process, connecting students with placements that align with their goals and providing valuable learning opportunities. 
-                By optimizing efficiency and enhancing transparency, we empower students to gain practical skills, network with industry experts, and accelerate their professional growth.
-            </p>
-        </div>
-        <img src="../img/studentPageImage2.jpg" alt="civil-engineer-work" style="height: 270px;">
-    </div>
-
-    <br> <br>
-
-    <div class="container-promise-with-img">
-        <img src="../img/studentPageImage3.jpg" alt="programmer-work" style="height: 265px;">
-
-        <div class="our-promise-desc">
-            <h3>Our Promise</h3>
-            <h1 style="color: rgb(26, 26, 26);">Reliable and Efficient System</h1>
-            <p>Our system is reliable and efficient, providing a seamless internship management experience. 
-                With stability, accuracy, and streamlined workflows, we prioritize the success of students and organizations alike.
-            </p>
-        </div>
-    </div>
     <?php
     include('../includes/footer.html');
     ?>

@@ -30,11 +30,11 @@ if (mysqli_query($conn, $sql1)) {
 echo '<br>';
 
 if ($userlevel == 1) {
-    echo '<a href="Admin/admin_page.php">Click here to Go Back to Admin Page</a>';
+    header('location: Admin/admin_page.php');
 } else if ($userlevel == 2) {
-    echo '<a href="Coordinator/coordinator_page.php">Click here to Go Back to Coordinator Page</a>';
+    header('location: Coordinator/coordinator_page.php');
 } else if ($userlevel == 3) {
-    echo '<a href="Student/student_page.php">Click here to Go Back to Student Page</a>';
+    header('location: Student/student_page.php');
 }
 mysqli_close($conn);
 ?>
