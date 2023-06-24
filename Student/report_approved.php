@@ -12,6 +12,10 @@
 </head>
 
 <body>
+    <?php
+    include('../includes/headerStudent.html');
+    ?>
+
     <div class="container my-5">
         <h2>Student Application Report List</h2>
         <p><i>Students Can Only View their own Applications</i></p>
@@ -82,6 +86,11 @@
                 ?>
             </tbody>
         </table>
+    </div>
+    
+    <?php
+    include('../includes/footer.html');
+    ?>
 </body>
 
 </html>
