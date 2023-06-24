@@ -21,11 +21,6 @@
 
     <div class="industry-background">
         <img src="../img/studentPageImage.jpg" style="width: 100%;">
-        <div class="homepage-caption">
-            <p class="cCaption">Best Internship Management System</p>
-            <p class="cCaption2"><i>"RECOMENDED BY MANY INDUSTRY LEADERS"</i></p>
-            <a href="student_application_form.php"><button class="button">Apply Now!</button></a>
-        </div>
     </div>
 
     <br> <br>
