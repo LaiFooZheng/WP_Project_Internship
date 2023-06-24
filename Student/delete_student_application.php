@@ -9,7 +9,7 @@ if (isset($_GET["id"])) {
 $sql = "DELETE FROM practical_training WHERE applicationid = $id LIMIT 1";
 
 if (mysqli_query($conn, $sql)) {
-    echo "User deleted successfully";
+    echo "<a href='' id='echo'>User deleted successfully &#9745</a>";
 } else {
     echo "Error deleting user: " . mysqli_error($conn);
 }
@@ -33,7 +33,7 @@ mysqli_close($conn);
     ?>
 
     <BR><BR>
-    <a href="student_application_list.php">Click here to view updated application list</a>
+    <a href="student_application_list.php" id="studentapplist">Click here to view updated application list</a>
 
     <?php
     include('../includes/footer.html');

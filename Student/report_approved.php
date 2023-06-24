@@ -17,8 +17,8 @@
     ?>
 
     <div class="container my-5">
-        <h2>Student Application Report List</h2>
-        <p><i>Students Can Only View their own Applications</i></p>
+        <h2 style="text-align:center; font-weight:bold">Student Application Report List</h2>
+        <p style="text-align:center; font-weight:bold"><i>Students Can Only View their own Applications</i></p>
         <a class="btn btn-danger" href="../login.html" role="button">LOGOUT</a>
         <br>
         <table class="table">
