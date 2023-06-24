@@ -23,7 +23,7 @@
     $id = $_SESSION['USER_ID'];
     $application_title = $_POST['companyName']. "/" .$_POST['jobTitle'];
     $application_date = date("d-M-Y");
-    $status = "submitted";
+    $status = "Submitted";
     $fullname = $_POST["fullname"];
     $matricnumber = $_POST["matricnumber"];
     $age = $_POST["age"];

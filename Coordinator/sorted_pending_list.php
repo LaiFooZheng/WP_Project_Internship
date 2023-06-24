@@ -21,7 +21,7 @@
         <a class="btn btn-primary" href="approve_reject_list.php" role="button">Original List</a>
         <br>
         <table class="table">
-            <thead>"<a id='echo' style='color:black; text-align:left;'>0 results</a>"
+            <thead>
                 <tr>
                     <th>No.</th>
                     <th>Application ID</th>

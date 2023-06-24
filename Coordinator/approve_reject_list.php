@@ -70,7 +70,7 @@
                             <td>$row[applicationtitle]</td>
                             <td>$row[applicationstatus]</td>
                             <td>
-                            <a class='btn btn-success btn-sm' href='approve_application.php?app_id=$row[applicationid]&id=$array[userid]&userlevel=$userlevel'>Approve</a>
+                            <a class='btn btn-success btn-sm' href='approve_application.php?id=$row[applicationid]'>Approve</a>
                             <a class='btn btn-danger btn-sm' href='reject_application.php?id=$row[applicationid]'>Reject</a>
                             <a class='btn btn-primary btn-sm' href='../Student/view_student_application.php?app_id=$row[applicationid]&id=$array[userid]&userlevel=$userlevel'>View</a>
                             </td>

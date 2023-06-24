@@ -20,9 +20,8 @@
     <br> <br>
 
     <div class="coordinator-links">
-        <b><a href="ViewApplicationList.php"><label class="co-homepage-btn">View Application List</label></a></b>
-        <b><a href="ViewSortedReport.php"><label class="co-homepage-btn">View Sorted Report</label></a></b>
-        <b><a href="ViewSortedSubmission.php"><label class="co-homepage-btn">View Sorted Submission</label></a></b>
+        <b><a href="application_list.php"><label class="co-homepage-btn">View Sorted Application List</label></a></b>
+        <b><a href="sorted_pending_list.php"><label class="co-homepage-btn">View Sorted Pending List</label></a></b>
     </div>
 
     <form action="search_student.php" method="POST">
