@@ -38,7 +38,7 @@ if (mysqli_num_rows($tab1) == 1) {
 
 <body>
     <div class="container my-5">
-        <h2>Edit Profile</h2>
+        <h2 style="text-align:center; font-weight:bold">Edit Profile</h2>
         <form method="post" action="update_profile.php">
             <input type="hidden" name="id" value="<?php echo $id; ?>"> <!-- hidden element -->
             <div class="row mb-3">

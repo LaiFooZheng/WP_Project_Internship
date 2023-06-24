@@ -38,7 +38,7 @@ if (mysqli_num_rows($tab1) == 1) {
 
 <body>
     <div class="container my-5">
-        <h2>View Profile</h2>
+        <h2 style="text-align:center; font-weight:bold">View Profile</h2>
         <div class="row mb-3">
             <label class="col-sm-3 col-form-label">Full Name</label>
             <div class="col-sm-6">
