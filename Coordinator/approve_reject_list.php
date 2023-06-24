@@ -103,9 +103,8 @@
             </tbody>
         </table>
     </div>
-
-    <?php
-    include('../includes/footer.html');
+    <?php 
+        include('../includes/footer.html');
     ?>
 
 </body>
