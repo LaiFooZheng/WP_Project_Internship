@@ -17,8 +17,8 @@
     ?>
 
     <div class="container my-5">
-        <h2>Student Application List</h2>
-        <p><i>Students Can Only View their own Applications</i></p>
+        <h2 style="text-align:center; font-weight:bold">Student Application List</h2>
+        <p style="text-align:center; font-weight:bold"><i>Students Can Only View their own Applications</i></p>
         <a class="btn btn-danger" href="../login.html" role="button">LOGOUT</a>
         <br>
         <table class="table">
@@ -71,13 +71,13 @@
                                   <td>
                                       <a class='btn btn-primary btn-sm' href='edit_student_application_form.php?app_id=$row[applicationid]&userlevel=$userlevel'>Edit</a>
                                       <a class='btn btn-danger btn-sm' href='delete_student_application.php?app_id=$row[applicationid]'>Delete</a>
-                                      <a class='btn btn-dark btn-sm' href='view_student_application.php?id=$row[applicationid]'>View</a>
+                                      <a class='btn btn-dark btn-sm' href='view_student_application.php?app_id=$row[applicationid]&userlevel=$userlevel'>View</a>
                                   </td>
                               </tr> 
                               ";
                             }
                         } else {
-                            echo "0 results";
+                            echo "<a id='echo' style='color:black; text-align:left;'>0 results</a>";
                         }
 
                         mysqli_close($conn);

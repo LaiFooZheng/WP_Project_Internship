@@ -24,7 +24,6 @@
         <div class="admin-links">
             <b> <a href="user_list.php"><label class="ad-homepage-btn">View All Users</label></a>
                 <a href="../application_list.php"><label class="ad-homepage-btn">View Student Applications</label></a>
-                <a href="view student application.php"><label class="ad-homepage-btn">View Student Report</label></a>
             </b>
         </div>
     </form>
@@ -42,7 +41,12 @@
                 <option value="phone">Phone Number</option>
             </select>
             <br>
-            <input class="co-homepage-submit" type="submit" value="Search"> <!--added value-->
+            <input class="co-homepage-submit" type="submit" value="Search">
+        </div>
     </form>
+    <?php
+    include('../includes/footer.html');
+    ?>
 </body>
+    
 </html>

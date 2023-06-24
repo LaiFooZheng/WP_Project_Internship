@@ -14,6 +14,7 @@
 require_once("../config.php");
 session_start();
 $app_id = $_GET["app_id"];
+$userlevel= $_GET["userlevel"];
 $id = $_SESSION['USER_ID'];
 if (isset($_GET["id"])) {
     $id = $_GET["id"];  
@@ -27,7 +28,7 @@ $query2 = mysqli_query($conn, "SELECT * FROM company where fk_applicationid = '$
 $query3 = mysqli_query($conn, "SELECT * FROM user_detail where fk_applicationid = '$app_id'") or die(mysqli_connect_error());
 
 
-$query4 = mysqli_query($conn, "SELECT * FROM practical_training where fk_userid = '$app_id'") or die(mysqli_connect_error());
+$query4 = mysqli_query($conn, "SELECT * FROM practical_training where applicationid = '$app_id'") or die(mysqli_connect_error());
 $row = mysqli_fetch_array($query);
 $row2 = mysqli_fetch_array($query2);
 $row3 = mysqli_fetch_array($query3);
@@ -51,12 +52,23 @@ $matricnumber = $row3["matricnumber"];
 $gender = $row3["gender"];
 $nationality = $row3["nationality"];
 
+$applicationstatus = $row4["applicationstatus"]
 
 ?>
 
 <body>
     <?php
-    include('../includes/headerStudent.html');
+
+    if ($userlevel == 1) {
+        include('../includes/headerAdmin.html');
+    } 
+    else if($userlevel == 2) {
+        include('../includes/headerCoordinator.html');
+    }else if ($userlevel == 3) {
+        include('../includes/headerStudent.html');
+        
+    }
+    // include('../includes/headerStudent.html');
     ?>
     
     <h1 style="text-align: center; margin-top: 50px;">Edit Application of Internship Session</h1>
@@ -166,11 +178,25 @@ $nationality = $row3["nationality"];
             </div>
             
             </div>
-            <div class="row mb-3">
-                <div class="offset-sm-3 col-sm-3 d-grid">
-                    <a href="report_approved.php" class="btn btn-primary" >Return</a>
-                </div>
-            </div>
+
+            <?php if ($userlevel == 3): ?>
+                
+                <div class="row mb-3">
+                    <div class="offset-sm-3 col-sm-3 d-grid">
+                        <?php if ($applicationstatus == 'Approved'): ?>
+                            <a href="report_approved.php" class="btn btn-primary">Return</a>
+                        <?php else: ?>
+                            <a href="student_application_list.php" class="btn btn-primary">Return</a>
+                        <?php endif; ?>
+                    </div>
+                    </div>
+                <?php elseif ($userlevel == 1 || $userlevel == 2): ?>
+                    <div class="row mb-3">
+                    <div class="offset-sm-3 col-sm-3 d-grid">
+                        <a href="../application_list.php" class="btn btn-primary">Return</a>
+                    </div>
+                    </div>
+            <?php endif; ?>
         </form>
     </div>
     <?php

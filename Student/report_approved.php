@@ -17,8 +17,8 @@
     ?>
 
     <div class="container my-5">
-        <h2>Student Application Report List</h2>
-        <p><i>Students Can Only View their own Applications</i></p>
+        <h2 style="text-align:center; font-weight:bold">Student Application Report List</h2>
+        <p style="text-align:center; font-weight:bold"><i>Students Can Only View their own Applications</i></p>
         <a class="btn btn-danger" href="../login.html" role="button">LOGOUT</a>
         <br>
         <table class="table">
@@ -48,6 +48,9 @@
 
                     // Retrieve data from the table
                     $array = array();
+                    $query = mysqli_query($conn, "SELECT * FROM login WHERE fk_userid = $studentId") or die(mysqli_connect_error());
+                    $row2 = mysqli_fetch_assoc($query);
+                    $userlevel = $row2['userlevel'];
                     $select = "SELECT * FROM practical_training WHERE fk_userid = $studentId AND applicationstatus = 'Approved'";
                     $sql = mysqli_query($GLOBALS['conn'], $select);
 
@@ -66,7 +69,7 @@
                                   <td>$row[applicationtitle]</td>
                                   <td>$row[applicationstatus]</td>
                                   <td>
-                                  <a class='btn btn-dark btn-sm' href='view_student_application.php?id=$row[applicationid]'>View</a>
+                                  <a class='btn btn-dark btn-sm' href='view_student_application.php?app_id=$row[applicationid]&userlevel=$userlevel''>View</a>
                                     </td>  
                               </tr> 
                               ";

@@ -7,7 +7,7 @@
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
 }
 
-#updatelist {
+#studentapplist {
     display: block;
     color: black;
     text-align: center;
@@ -15,20 +15,7 @@
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
 }
 
-#updatelist a:hover {
-    font-size: larger;
-    transition: 0.5s;
-}
-
-#userlist {
-    display: block;
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-}
-
-#userlist a:hover {
+#studentapplist a:hover {
     font-size: larger;
     transition: 0.5s;
 }
