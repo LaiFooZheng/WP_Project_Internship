@@ -13,7 +13,7 @@
 
 <body>
     <div class="container my-5">
-        <h2>Student Application List</h2>
+        <h2>Student Application Report List</h2>
         <p><i>Students Can Only View their own Applications</i></p>
         <a class="btn btn-danger" href="../login.html" role="button">LOGOUT</a>
         <br>
@@ -21,9 +21,11 @@
             <thead>
                 <tr>
                     <th>Application ID</th>
+                    <th>Name</th>
                     <th>Date Applied</th>
                     <th>Title</th>
                     <th>Status</th>
+                    <th></th>
                 </tr>
             </thead>
 
@@ -42,7 +44,7 @@
 
                     // Retrieve data from the table
                     $array = array();
-                    $select = "SELECT * FROM practical_training WHERE fk_userid = $studentId WHERE applicationstatus = 'Approved'";
+                    $select = "SELECT * FROM practical_training WHERE fk_userid = $studentId AND applicationstatus = 'Approved'";
                     $sql = mysqli_query($GLOBALS['conn'], $select);
 
                     // Check if the query executed successfully
@@ -58,7 +60,10 @@
                                   <td>$profile[name]</td>
                                   <td>$row[applicationdate]</td>  
                                   <td>$row[applicationtitle]</td>
-                                  <td>$row[applicationstatus]</td>  
+                                  <td>$row[applicationstatus]</td>
+                                  <td>
+                                  <a class='btn btn-dark btn-sm' href='view_student_application.php?id=$row[applicationid]'>View</a>
+                                    </td>  
                               </tr> 
                               ";
                             }

@@ -40,7 +40,7 @@
         <ul>
             <li><a href="student_page.php">Home</a></li>
             <li><a href="student_application_list.php">Apply</a></li>
-            <li><a href="Student/student_report_homepage.php">Report</a></li>
+            <li><a href="report_approved.php">Report</a></li>
         </ul>
     </nav>
     <!--end of header-->
