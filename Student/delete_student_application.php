@@ -33,9 +33,10 @@ mysqli_close($conn);
     ?>
 
     <BR><BR>
-    <a href="student_application_list.php">Click here to view updated application list</a>
-
+    <!-- <a href="student_application_list.php">Click here to view updated application list</a> -->
+    
     <?php
+    header("Location: " . $_SERVER['HTTP_REFERER']);
     include('../includes/footer.html');
     ?>
 </body>
