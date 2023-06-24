@@ -2,8 +2,8 @@
 
 require_once("../config.php");
 
-if (isset($_GET["id"])) {
-    $id = $_GET["id"];
+if (isset($_GET["app_id"])) {
+    $id = $_GET["app_id"];
 }
 
 $sql = "DELETE FROM practical_training WHERE applicationid = $id LIMIT 1";
