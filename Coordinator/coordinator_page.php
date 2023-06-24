@@ -28,7 +28,7 @@
                 <p>COORDINATOR</p>
             </button>
             <div class="dropdown-content">
-                <a href="EditProfile_Form.php">Profile</a>
+                <a href="../view_profile.php">Profile</a>
                 <a href="../login.html">Log out</a>
             </div>
         </div>
@@ -57,7 +57,7 @@
         <b><a href="ViewSortedSubmission.php"><label class="co-homepage-btn">View Sorted Submission</label></a></b>
     </div>
 
-    <form action="SearchingUsers.php" method="post">
+    <form action="search_student.php" method="POST">
         <div class="co-homepage-table">
             <span class="profile">Search Student's Profile:</span>
             <input type="text" class="co-homepage-input" name="search" />
@@ -70,13 +70,13 @@
                 <option value="userid">User ID</option>
             </select>
             <br>
-            <input class="co-homepage-submit" type="submit" value="Submit"> <!--added value-->
+            <input class="co-homepage-submit" type="submit" value="Search"> <!--added value-->
     </form>
 
     <br> <br>
 
-    <form action="SearchingRecord.php" method="post">
-        <span class="profile">Search Student's Internship Report:</span>
+    <form action="search_student_application.php" method="POST">
+        <span class="profile">Search Student's Application:</span>
         <input class="co-homepage-input" type="text" name="search"><br>
 
         <span class="profile">Column:</span>
@@ -87,7 +87,7 @@
             <option value="applicationtitle">Application Title</option>
             <option value="applicationdate">Application Date</option>
         </select><br>
-        <input class="co-homepage-submit" type="submit" value="Submit"> <!--added value-->
+        <input class="co-homepage-submit" type="submit" value="Search"> <!--added value-->
     </form>
     </div>
     <?php

@@ -1,8 +1,7 @@
 <?php
 
-require_once("../config.php");
+require_once("config.php");
 
-//if null, you can your own js script that shows alert box or error message
 if (isset($_POST["id"])) {
     $id = $_POST["id"];
 }
@@ -14,13 +13,12 @@ $email = $_POST["email"];
 $age = $_POST["age"];
 $phone = $_POST["phone"];
 $address = $_POST["address"];
-$userlevel = $_POST["userlevel"];
+// $userlevel = $_POST["userlevel"];
 
-// Update the tables according the variables above using sql query
 $sql1 = "UPDATE users SET email='$email', name='$fullname', age='$age', phone='$phone', address='$address' where userid='$id'";
 mysqli_query($conn, $sql1) or die(mysqli_connect_error());
 
-$sql2 = "UPDATE login SET username='$username', password='$password', userlevel='$userlevel'where fk_userid='$id'";
+$sql2 = "UPDATE login SET username='$username', password='$password' where fk_userid='$id'";
 mysqli_query($conn, $sql2) or die(mysqli_connect_error());
 
 if (mysqli_query($conn, $sql1)) {
@@ -43,14 +41,10 @@ mysqli_close($conn);
 </head>
 
 <body>
-    <?php
-    include('../includes/headerAdmin.html');
-    ?>
     <BR><BR>
-    <a href="user_list.php">Click here to see the user list</a>
-    <?php
-    include('../includes/footer.php');
-    ?>
+    <script>
+        document.write('<a href="' + document.referrer + '">Click here to Go Back</a>');
+    </script>
 </body>
 
 </html>

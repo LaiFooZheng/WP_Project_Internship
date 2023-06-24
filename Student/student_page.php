@@ -40,7 +40,7 @@
         <ul>
             <li><a href="student_page.php">Home</a></li>
             <li><a href="student_application_list.php">Apply</a></li>
-            <li><a href="Student/report_homepage.php">Report</a></li>
+            <li><a href="report_approved.php">Report</a></li>
         </ul>
     </nav>
     <!--end of header-->
@@ -50,7 +50,7 @@
         <div class="homepage-caption">
             <p class="cCaption">Best Practical Training Management System</p>
             <p class="cCaption2"><i>"RECOMENDED BY MANY INDUSTRY LEADERS"</i></p>
-            <a href="Student/add_practical_training.php"><button class="button">Apply Now!</button></a>
+            <a href="student_application_form.php"><button class="button">Apply Now!</button></a>
         </div>
     </div>
 

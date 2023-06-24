@@ -18,15 +18,28 @@
 
     <form action="search_user.php" method="post">
         <div class="admin-links">
-        <b><a href="user_list.php"><label class="ad-homepage-btn">View All User</label></a></b>
-        <b><a href="../application_list.php"><label class="ad-homepage-btn">View Student Applicationst</label></a></b>
-        <b><a href="view student application.php"><label class="ad-homepage-btn">View Student Report</label></a></b>
+            <b> <a href="user_list.php"><label class="ad-homepage-btn">View All Users</label></a>
+                <a href="../application_list.php"><label class="ad-homepage-btn">View Student Applications</label></a>
+                <a href="view student application.php"><label class="ad-homepage-btn">View Student Report</label></a>
+            </b>
         </div>
     </form>
     <br> <br>
-    <?php
-    include('../includes/footer.php');
-    ?>
+    <form action="search_user.php" method="POST">
+        <div class="co-homepage-table">
+            <span class="profile">Search Student's Profile:</span>
+            <input type="text" class="co-homepage-input" name="search" />
+            <br>
+
+            <span class="profile">Column: </span>
+            <select class="select" name="column">
+                <option value="userid">User ID</option>
+                <option value="name">Name</option>
+                <option value="phone">Phone Number</option>
+            </select>
+            <br>
+            <input class="co-homepage-submit" type="submit" value="Search"> <!--added value-->
+    </form>
 </body>
 
 </html>

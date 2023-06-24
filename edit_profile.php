@@ -32,14 +32,14 @@ if (mysqli_num_rows($tab1) == 1) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit User</title>
+    <title>Edit Profile</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 </head>
 
 <body>
     <div class="container my-5">
-        <h2>Edit User</h2>
-        <form method="post" action="update_user.php">
+        <h2>Edit Profile</h2>
+        <form method="post" action="update_profile.php">
             <input type="hidden" name="id" value="<?php echo $id; ?>"> <!-- hidden element -->
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Full Name</label>
