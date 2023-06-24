@@ -12,10 +12,13 @@
 </head>
 
 <body>
+    <?php
+    include('../includes/headerCoordinator.html');
+    ?>
     <div class="container my-5">
         <h2>Pending Application List</h2>
         <p><i>Pending List Only Accessible to Coordinators</i></p>
-        <!-- <a class="btn btn-primary" href="user_form.php" role="button">Add User</a> -->
+        <a class="btn btn-primary" href="sorted_pending_list.php" role="button">Sort List by Date</a>
         <br>
         <table class="table">
             <thead>
@@ -41,7 +44,7 @@
                 $sql = mysqli_query($GLOBALS['conn'], $select);
                 $count = 1;
 
-                if (mysqli_num_rows($sql) > 0) {    
+                if (mysqli_num_rows($sql) > 0) {
                     // Output data of each row
                     while ($row = mysqli_fetch_array($sql)) {
                         $array['userid'] = $row['fk_userid'];
@@ -72,8 +75,8 @@
             </tbody>
         </table>
     </div>
-    <?php 
-        include('../includes/footer.html');
+    <?php
+    include('../includes/footer.html');
     ?>
 </body>
 
