@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "mysqli_connect.php";
+require_once("../config.php");
 
 
     

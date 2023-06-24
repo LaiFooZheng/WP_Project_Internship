@@ -11,17 +11,17 @@
 
 
 <?php
-include "mysqli_connect.php";
+require_once("../config.php");
 session_start();
 
-if (isset($_GET["app_id"])) {
-    $app_id = $_GET["app_id"];
+$app_id = $_GET["app_id"];
+$id = $_SESSION['USER_ID'];
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];  
 }
 
-$id = $_SESSION['USER_ID'];
 $query = mysqli_query($conn, "SELECT * FROM users where userid = '$id'") or die(mysqli_connect_error());
 
-$app_id = $_GET["id"];
 $query2 = mysqli_query($conn, "SELECT * FROM company where fk_applicationid = '$app_id'") or die(mysqli_connect_error());
 
 
@@ -166,6 +166,7 @@ $address = $row["address"];
             
             </div>
             <div class="row mb-3">
+                
                 <div class="offset-sm-3 col-sm-3 d-grid">
                 <button type="submit" class="btn btn-primary" onclick="return Validate()">Save</button>
                 </div>

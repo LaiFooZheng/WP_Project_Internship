@@ -11,7 +11,7 @@
 
 
 <?php
-include "mysqli_connect.php";
+require_once("../config.php");
 session_start();
 $id = $_SESSION['USER_ID'];
 $query = mysqli_query($conn, "SELECT * FROM users where userid = '$id'") or die(mysqli_connect_error());
