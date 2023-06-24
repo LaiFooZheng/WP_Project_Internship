@@ -15,13 +15,13 @@ if (mysqli_num_rows($tab1) == 1) {
     $data2 = mysqli_fetch_array($tab2);
 
     $fullname = $data1["name"];
-	$username = $data2["username"];
-	$password = $data2["password"];
-	$email = $data1["email"];
-	$age = $data1["age"];
-	$phone = $data1["phone"];
-	$address = $data1["address"];
-	$userlevel = $data2["userlevel"];
+    $username = $data2["username"];
+    $password = $data2["password"];
+    $email = $data1["email"];
+    $age = $data1["age"];
+    $phone = $data1["phone"];
+    $address = $data1["address"];
+    $userlevel = $data2["userlevel"];
 }
 ?>
 
@@ -59,11 +59,11 @@ if (mysqli_num_rows($tab1) == 1) {
                     <input type="password" class="form-control" name="password" value="<?php echo $password; ?>">
                 </div>
             </div>
-            <!-- maybe add a password confirmation field -->
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="email" size="30" maxlength="60" value="<?php echo $email; ?>">
+                    <input type="text" class="form-control" name="email" size="30" maxlength="60"
+                        value="<?php echo $email; ?>">
                 </div>
             </div>
             <div class="row mb-3">
@@ -75,7 +75,8 @@ if (mysqli_num_rows($tab1) == 1) {
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Phone Number</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="phone" size="30" maxlength="60" value="<?php echo $phone; ?>">
+                    <input type="text" class="form-control" name="phone" size="30" maxlength="60"
+                        value="<?php echo $phone; ?>">
                 </div>
             </div>
             <div class="row mb-3">
@@ -84,11 +85,11 @@ if (mysqli_num_rows($tab1) == 1) {
                     <input type="text" class="form-control" name="address" value="<?php echo $address; ?>">
                 </div>
             </div>
-            <!-- dropdown option for the user level -->
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">User Level</label>
                 <div class="col-sm-6">
-                    <?php echo $userlevel;?>
+                    <input type="number" class="form-control" name="userlevel" min="1" max="3"
+                        value="<?php echo $userlevel; ?>" readonly>
                 </div>
             </div>
             <div class="row mb-3">

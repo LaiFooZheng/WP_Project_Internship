@@ -10,11 +10,14 @@
 </head>
 
 <body>
+  <?php
+  include('../includes/headerStudent.html');
+  ?>
 
   
   <?php
   session_start();
-	include "mysqli_connect.php";
+	require_once("../config.php");
 
 	// if(isset($_POST['submit'])) {
     $id = $_SESSION['USER_ID'];
@@ -77,7 +80,9 @@
 	<!-- <br> -->
 	<!-- Need to add UI for this updated page and error checking -->
 	<!-- <a href="student_application_list.php">Click here to see the updated application list</a> -->
-
+  <?php
+    include('../includes/footer.html');
+    ?>
 </body>
 
 </html>

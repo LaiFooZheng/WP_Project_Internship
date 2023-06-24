@@ -11,12 +11,16 @@
 
 
 <?php
-include "mysqli_connect.php";
+require_once("../config.php");
 session_start();
+$app_id = $_GET["app_id"];
 $id = $_SESSION['USER_ID'];
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];  
+}
+
 $query = mysqli_query($conn, "SELECT * FROM users where userid = '$id'") or die(mysqli_connect_error());
 
-$app_id = $_GET["id"];
 $query2 = mysqli_query($conn, "SELECT * FROM company where fk_applicationid = '$app_id'") or die(mysqli_connect_error());
 
 
@@ -51,8 +55,11 @@ $nationality = $row3["nationality"];
 ?>
 
 <body>
-
-    <h1 style="text-align: center; margin-top: 50px;">Edit Application of Practical Training Session</h1>
+    <?php
+    include('../includes/headerStudent.html');
+    ?>
+    
+    <h1 style="text-align: center; margin-top: 50px;">Edit Application of Internship Session</h1>
       <label style="display: block; text-align: end;">
         <b>Date :</b>
         <input id="remove-border" style="font-size:15px; font-weight: bold;" type="text" name="applicationdate" value="<?php date_default_timezone_set("Asia/Kuala_Lumpur");																																echo date("d-M-Y"); ?>" readonly />
@@ -131,7 +138,7 @@ $nationality = $row3["nationality"];
                 <?php echo $companyemail;?>
                 </div>
             </div>        
-        <h2>Practical Training Information</h2>
+        <h2>Internship Information</h2>
 
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Department Name</label>
@@ -161,11 +168,14 @@ $nationality = $row3["nationality"];
             </div>
             <div class="row mb-3">
                 <div class="offset-sm-3 col-sm-3 d-grid">
-                    <a href="student_application_list.php" class="btn btn-primary" >Return</a>
+                    <a href="report_approved.php" class="btn btn-primary" >Return</a>
                 </div>
             </div>
         </form>
     </div>
+    <?php
+    include('../includes/footer.html');
+    ?>
 </body>
 
 </html>

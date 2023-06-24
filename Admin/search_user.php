@@ -79,30 +79,6 @@
                 } else {
                     echo "<a id='echo' style='color:black; text-align:left;'>0 results</a>";
                 }
-                // $array = array();
-                // $select = "SELECT * from users WHERE $column LIKE '%$search%'";
-                // $sql = mysqli_query($GLOBALS['conn'], $select);
-                // $count = 1;
-                
-                // if (mysqli_num_rows($sql) > 0) {
-                //     // Output data of each row
-                //     while ($row = mysqli_fetch_array($sql)) {
-                //         $array['userid'] = $row['fk_userid'];
-                //         $profile = getUsersData($array['userid']);
-                //         echo "
-                //         <tr>
-                //             <td>$count</td>
-                //             <td>$row[userid]</td>
-                //             <td>$row[name]</td>
-                //             <td>$profile[username]</td>
-                //             <td>$row[email]</td>
-                //         </tr> 
-                //         ";
-                //         $count++;
-                //     }
-                // } else {
-                //     echo "0 results";
-                // }
                 
                 mysqli_close($conn);
                 ?>

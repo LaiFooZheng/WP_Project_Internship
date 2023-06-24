@@ -11,17 +11,18 @@
 
 
 <?php
-include "mysqli_connect.php";
+require_once("../config.php");
 session_start();
 
-if (isset($_GET["app_id"])) {
-    $app_id = $_GET["app_id"];
+$app_id = $_GET["app_id"];
+$userlevel= $_GET["userlevel"];
+$id = $_SESSION['USER_ID'];
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];  
 }
 
-$id = $_SESSION['USER_ID'];
 $query = mysqli_query($conn, "SELECT * FROM users where userid = '$id'") or die(mysqli_connect_error());
 
-$app_id = $_GET["id"];
 $query2 = mysqli_query($conn, "SELECT * FROM company where fk_applicationid = '$app_id'") or die(mysqli_connect_error());
 
 
@@ -44,8 +45,11 @@ $address = $row["address"];
 ?>
 
 <body>
+    <?php
+    include('../includes/headerStudent.html');
+    ?>
 
-    <h1 style="text-align: center; margin-top: 50px;">Edit Application of Practical Training Session</h1>
+    <h1 style="text-align: center; margin-top: 50px;">Edit Application of Internship Session</h1>
       <label style="display: block; text-align: end;">
         <b>Date :</b>
         <input id="remove-border" style="font-size:15px; font-weight: bold;" type="text" name="applicationdate" value="<?php date_default_timezone_set("Asia/Kuala_Lumpur");																																echo date("d-M-Y"); ?>" readonly />
@@ -53,7 +57,7 @@ $address = $row["address"];
 
     <div class="container my-5">
         <h2>Personal Information</h2>
-        <form method="post" action="edit_student_application.php?app_id=<?php echo $app_id; ?>">
+        <form method="post" action="edit_student_application.php?app_id=<?php echo $app_id; ?>&userlevel=<?php echo $userlevel; ?>">
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Full Name</label>
                 <div class="col-sm-6">
@@ -133,7 +137,7 @@ $address = $row["address"];
                         echo htmlspecialchars($row2['companyemail']); ?>" required>
                 </div>
             </div>        
-        <h2>Practical Training Information</h2>
+        <h2>Internship Information</h2>
 
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Department Name</label>
@@ -166,6 +170,7 @@ $address = $row["address"];
             
             </div>
             <div class="row mb-3">
+
                 <div class="offset-sm-3 col-sm-3 d-grid">
                 <button type="submit" class="btn btn-primary" onclick="return Validate()">Save</button>
                 </div>
@@ -240,6 +245,10 @@ $address = $row["address"];
             </div>
         </form>
     </div>
+
+    <?php
+    include('../includes/footer.html');
+    ?>
 </body>
 
 </html>

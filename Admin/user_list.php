@@ -37,13 +37,11 @@
                 <?php
                 require_once("../config.php");
 
-                // Retrieve data from table
                 $sql1 = mysqli_query($conn, "SELECT * FROM users") or die(mysqli_connect_error());
                 $sql2 = mysqli_query($conn, "SELECT * FROM login") or die(mysqli_connect_error());
                 $count = 1;
 
                 if (mysqli_num_rows($sql1) > 0) {
-                    // Output data of each row
                     while ($row = mysqli_fetch_array($sql1)) {
                         $row2 = mysqli_fetch_array($sql2);
                         echo "
@@ -61,7 +59,6 @@
                         } else if ($row2['userlevel'] == 3) {
                             echo 'Student';
                         }
-                        // Still thinking whether the view button is necessary
                         echo "
                             </td>
                             <td>
@@ -86,5 +83,6 @@
     include('../includes/footer.html');
     ?>
 </body>
+
 
 </html>

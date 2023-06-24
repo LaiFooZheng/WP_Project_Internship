@@ -1,44 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coordinator</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="coordinator_page.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cousine&family=Montserrat:ital,wght@0,400;1,200&display=swap"
-        rel="stylesheet">
+    
 </head>
 
-<body> 
-
-    <div class="outercontainer-nav">
-        <div class="container-logo">
-            <a href="coordinator.php"><img src="../img/1.png" alt="Logo" id="img-logo"></a>
-            <!-- <p class="title">Internship Management System</p> -->
-        </div>
-
-        <div class="dropdown">
-            <button class="dropbtn-logo"><img src="../img/coordinator icon.jpg" alt="Coordinator logo" width="400px">
-                <p>COORDINATOR</p>
-            </button>
-            <div class="dropdown-content">
-                <a href="../view_profile.php">Profile</a>
-                <a href="../login.html">Log out</a>
-            </div>
-        </div>
-    </div>
-    <nav class="stroke">
-        <ul>
-            <li><a href="coordinator_page.php">Home</a></li>
-            <li><a href="approve_reject_list.php">Approve &#47; Reject Application</a></li>
-            <li><a href="../application_list.php">Full Application List</a></li>
-        </ul>
-    </nav>
+<body>
+    <?php
+    include('../includes/headerCoordinator.html');
+    ?>
 
     <div class="industry-background">
         <img src="../img/CoordinatorPageBackground.jpg" style="width: 100%; ">
@@ -90,7 +59,7 @@
     </form>
     </div>
     <?php
-    include('../includes/footer.php');
+    include('../includes/footer.html');
     ?>
 </body>
 
