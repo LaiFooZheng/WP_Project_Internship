@@ -51,7 +51,7 @@ mysqli_close($conn);
     
     <BR><BR>
     <section id="userlist">
-    <a href="user_list.php">Click here to see the user list</a>
+    <a href="user_list.php" id="userlist" style="text-decoration: none;">Click here to see the user list</a>
     </section>
     <?php
     include('../includes/footer.html');

@@ -9,7 +9,7 @@ if (isset($_GET["app_id"])) {
 $sql = "DELETE FROM practical_training WHERE applicationid = $id LIMIT 1";
 
 if (mysqli_query($conn, $sql)) {
-    echo "User deleted successfully";
+    echo "<a href='' id='echo'>User deleted successfully &#9745</a>";
 } else {
     echo "Error deleting user: " . mysqli_error($conn);
 }
