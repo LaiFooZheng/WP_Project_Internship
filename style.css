@@ -74,7 +74,7 @@ input[type=submit].button-training,
 .co-viewapp-btn, .button-training1, #search, input.admin-btn{
     outline: 0;
     border: 0;
-    background: #c00070;
+    background: rgb(0,123,255);
     cursor: pointer;
     border-radius: 10px;
     color: white;
@@ -203,7 +203,7 @@ input[type=submit].button-training:hover,
 .co-homepage-submit:hover, .co-viewapp-btn:hover, .button-training1:hover,
 .ad-search-user:hover, input.admin-btn:hover
 {  /*added*/
-    background: rgb(153, 2, 103);
+    background: rgb(0,123,255);
 }
 
 .userType-form {
