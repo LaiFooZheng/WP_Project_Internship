@@ -18,7 +18,7 @@
     <div class="container my-5">
         <h2>Pending Application List</h2>
         <p><i>Pending List Only Accessible to Coordinators</i></p>
-        <a class="btn btn-primary" href="sorted_pending_list.php" role="button">Sort List by Date</a>
+        <a class="btn btn-primary" href="approve_reject_list.php" role="button">Original List</a>
         <br>
         <table class="table">
             <thead>
@@ -40,7 +40,7 @@
 
                 // Retrieve data from table
                 $array = array();
-                $select = "SELECT * from practical_training WHERE applicationstatus = 'Submitted'";
+                $select = "SELECT * from practical_training WHERE applicationstatus = 'Submitted' ORDER BY applicationdate ASC";
                 $sql = mysqli_query($GLOBALS['conn'], $select);
                 $count = 1;
 

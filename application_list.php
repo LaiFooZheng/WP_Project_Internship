@@ -15,12 +15,14 @@
     <div class="container my-5">
         <h2>Full Application List</h2>
         <p><i>Full List Only Accessible to Admins and Coordinators</i></p>
+        <p><i>Sorted by User ID</i></p>
         <!-- <a class="btn btn-primary" href="user_form.php" role="button">Add User</a> -->
         <br>
         <table class="table">
             <thead>
                 <tr>
                     <th>Application ID</th>
+                    <th>User ID</th>
                     <th>Applicant</th>
                     <th>Date Applied</th>
                     <th>Title</th>
@@ -43,7 +45,7 @@
                 $query = mysqli_query($conn, "SELECT * FROM login WHERE fk_userid = $userID") or die(mysqli_connect_error());
                 $row2 = mysqli_fetch_assoc($query);
                 $userlevel = $row2['userlevel'];
-                $select = "SELECT * from practical_training";
+                $select = "SELECT * from practical_training ORDER BY fk_userid ASC";
                 $sql = mysqli_query($GLOBALS['conn'], $select);
                 if (mysqli_num_rows($sql) > 0) {
                     // Output data of each row
@@ -53,6 +55,7 @@
                         echo "
                         <tr>
                             <td>$row[applicationid]</td>
+                            <td>$profile[id]</td>
                             <td>$profile[name]</td>
                             <td>$row[applicationdate]</td>
                             <td>$row[applicationtitle]</td>
@@ -73,6 +76,8 @@
                 ?>
             </tbody>
         </table>
+    </div>
+    <?php include('includes/footer.html'); ?>
 </body>
 
 </html>
