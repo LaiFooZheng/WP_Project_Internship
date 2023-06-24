@@ -11,3 +11,16 @@ a:hover {
     font-size: larger;
     transition: 0.5s;
 }
+
+.admin-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgba(223, 242, 255, 0.3);
+    z-index: -1;
+    margin-top: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
