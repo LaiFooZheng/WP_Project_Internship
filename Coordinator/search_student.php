@@ -36,8 +36,8 @@
                 $search = $_POST['search'];
                 $column = $_POST['column'];
 
-                require_once("config.php");
-                require_once("functions.php");
+                require_once("../config.php");
+                require_once("../functions.php");
 
                 // Retrieve data from table
                 $array = array();

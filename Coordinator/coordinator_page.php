@@ -28,7 +28,7 @@
                 <p>COORDINATOR</p>
             </button>
             <div class="dropdown-content">
-                <a href="EditProfile_Form.php">Profile</a>
+                <a href="../view_profile.php">Profile</a>
                 <a href="../login.html">Log out</a>
             </div>
         </div>
@@ -57,7 +57,7 @@
         <b><a href="ViewSortedSubmission.php"><label class="co-homepage-btn">View Sorted Submission</label></a></b>
     </div>
 
-    <form action="../search_student.php" method="POST">
+    <form action="search_student.php" method="POST">
         <div class="co-homepage-table">
             <span class="profile">Search Student's Profile:</span>
             <input type="text" class="co-homepage-input" name="search" />
@@ -75,8 +75,8 @@
 
     <br> <br>
 
-    <form action="../search_student_application.php" method="POST">
-        <span class="profile">Search Student's Practical Training Report:</span>
+    <form action="search_student_application.php" method="POST">
+        <span class="profile">Search Student's Application:</span>
         <input class="co-homepage-input" type="text" name="search"><br>
 
         <span class="profile">Column:</span>

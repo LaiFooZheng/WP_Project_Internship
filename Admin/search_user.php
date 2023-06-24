@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User List</title>
+    <title>Search All Users</title>
     <!-- Bootstrap Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 
@@ -13,9 +13,9 @@
 
 <body>
     <div class="container my-5">
-        <h2>User List</h2>
+        <h2>Search All Users</h2>
         <p><i>Accessible to Admins</i></p>
-        <a class="btn btn-primary" href="user_form.php" role="button">Add User</a>
+        <!-- <a class="btn btn-primary" href="user_form.php" role="button">Add User</a> -->
         <br>
         <table class="table">
             <thead>
@@ -32,16 +32,19 @@
 
             <tbody>
                 <?php
-                require_once("../config.php");
+                $search = $_POST['search'];
+                $column = $_POST['column'];
 
-                // Retrieve data from table
-                $sql1 = mysqli_query($conn, "SELECT * FROM users") or die(mysqli_connect_error());
-                $sql2 = mysqli_query($conn, "SELECT * FROM login") or die(mysqli_connect_error());
+                require_once("../config.php");
+                require_once("../functions.php");
+
+                $sql1 = mysqli_query($conn, "SELECT * FROM users WHERE $column LIKE '%$search%'") or die(mysqli_connect_error());
                 $count = 1;
 
                 if (mysqli_num_rows($sql1) > 0) {
                     // Output data of each row
                     while ($row = mysqli_fetch_array($sql1)) {
+                        $sql2 = mysqli_query($conn, "SELECT * FROM login where fk_userid = $row[userid]");
                         $row2 = mysqli_fetch_array($sql2);
                         echo "
                         <tr>
@@ -73,7 +76,31 @@
                 } else {
                     echo "0 results";
                 }
-
+                // $array = array();
+                // $select = "SELECT * from users WHERE $column LIKE '%$search%'";
+                // $sql = mysqli_query($GLOBALS['conn'], $select);
+                // $count = 1;
+                
+                // if (mysqli_num_rows($sql) > 0) {
+                //     // Output data of each row
+                //     while ($row = mysqli_fetch_array($sql)) {
+                //         $array['userid'] = $row['fk_userid'];
+                //         $profile = getUsersData($array['userid']);
+                //         echo "
+                //         <tr>
+                //             <td>$count</td>
+                //             <td>$row[userid]</td>
+                //             <td>$row[name]</td>
+                //             <td>$profile[username]</td>
+                //             <td>$row[email]</td>
+                //         </tr> 
+                //         ";
+                //         $count++;
+                //     }
+                // } else {
+                //     echo "0 results";
+                // }
+                
                 mysqli_close($conn);
                 ?>
             </tbody>
