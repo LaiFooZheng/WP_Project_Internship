@@ -46,7 +46,15 @@ $address = $row["address"];
 
 <body>
     <?php
-    include('../includes/headerStudent.html');
+        if ($userlevel == 1) {
+            include('../includes/headerAdmin.html');
+        } 
+        else if($userlevel == 2) {
+            include('../includes/headerCoordinator.html');
+        }else if ($userlevel == 3) {
+            include('../includes/headerStudent.html');
+            
+        }
     ?>
 
     <h1 style="text-align: center; margin-top: 50px;">Edit Application of Internship Session</h1>

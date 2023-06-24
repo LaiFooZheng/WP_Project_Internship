@@ -21,6 +21,10 @@ $row = mysqli_fetch_array($query);
 
 <body>
 	<?php
+		
+
+
+
     include('../includes/headerStudent.html');
     ?>
 
