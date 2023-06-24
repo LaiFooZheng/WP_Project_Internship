@@ -34,13 +34,19 @@
             <tbody>
                 <?php
                 require_once("config.php");
-                require_once("functions.php");
+                require_once("functions.php"); 
+
+                session_start() ;
+                $userID = $_SESSION['USER_ID']; 
+
 
                 // Retrieve data from table
                 $array = array();
+                $query = mysqli_query($conn, "SELECT * FROM login WHERE fk_userid = $userID") or die(mysqli_connect_error());
+                $row2 = mysqli_fetch_assoc($query);
+                $userlevel = $row2['userlevel'];
                 $select = "SELECT * from practical_training ORDER BY fk_userid ASC";
                 $sql = mysqli_query($GLOBALS['conn'], $select);
-
                 if (mysqli_num_rows($sql) > 0) {
                     // Output data of each row
                     while ($row = mysqli_fetch_array($sql)) {
@@ -55,9 +61,9 @@
                             <td>$row[applicationtitle]</td>
                             <td>$row[applicationstatus]</td>
                             <td>
-                                <a class='btn btn-primary btn-sm' href='edit_user_form.php?app_id=$row[applicationid]'>Edit</a>
+                                <a class='btn btn-primary btn-sm' href='Student/edit_student_application_form.php?app_id=$row[applicationid]&id=$array[userid]&userlevel=$userlevel'>Edit</a>
                                 <a class='btn btn-danger btn-sm' href='delete_user.php?id=$row[applicationid]'>Delete</a>
-                                <a class='btn btn-dark btn-sm' href='view_user.php?id=$row[applicationid]'>View</a>
+                                <a class='btn btn-dark btn-sm' href='Student/view_student_application.php?app_id=$row[applicationid]&id=$array[userid]'>View</a>
                             </td>
                         </tr> 
                         ";

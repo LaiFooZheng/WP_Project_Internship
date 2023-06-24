@@ -16,7 +16,7 @@
 
 <body>
     <!--header-->
-    <?php include('student.html'); ?>
+    <?php require_once("../config.php"); ?>
 
     <div class="outercontainer-nav">
         <div class="container-logo">
