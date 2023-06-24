@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <link rel="shortcut icon" href="../img/2.png" type="image/x-icon">
 </head>
@@ -9,7 +10,7 @@
     ?>
 
     <div class="industry-background">
-        <img src="../img/background-img3.jpg" style="width: 100%;"> 
+        <img src="../img/background-img3.jpg" style="width: 100%;">
         <div class="homepage-caption">
             <p style="text-align: center;"><b>Best Internship Management System</b></p>
             <p style="text-align: center;"><i><b>"RECOMENDED BY MANY INDUSTRY LEADERS"</b></i></p>
@@ -27,7 +28,7 @@
     <br> <br>
     <form action="search_user.php" method="POST">
         <div class="co-homepage-table">
-            <span class="profile">Search Student's Profile:</span>
+            <span class="profile">Search User:</span>
             <input type="text" class="co-homepage-input" name="search" />
             <br>
 

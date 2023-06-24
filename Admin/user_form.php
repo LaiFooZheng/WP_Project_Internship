@@ -82,7 +82,7 @@
         </form>
     </div>
     <?php
-    include('../includes/footer.php');
+    include('../includes/footer.html');
     ?>
 </body>
 
