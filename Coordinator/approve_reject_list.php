@@ -43,9 +43,15 @@
                 <?php
                 require_once("../config.php");
                 require_once("../functions.php");
+                session_start() ;
+
+                $userID = $_SESSION['USER_ID']; 
 
                 // Retrieve data from table
                 $array = array();
+                $query = mysqli_query($conn, "SELECT * FROM login WHERE fk_userid = $userID") or die(mysqli_connect_error());
+                $row2 = mysqli_fetch_assoc($query);
+                $userlevel = $row2['userlevel'];
                 $select = "SELECT * from practical_training WHERE applicationstatus = 'Submitted'";
                 $sql = mysqli_query($GLOBALS['conn'], $select);
                 $count = 1;
@@ -64,9 +70,9 @@
                             <td>$row[applicationtitle]</td>
                             <td>$row[applicationstatus]</td>
                             <td>
-                            <a class='btn btn-success btn-sm' href='approve_application.php?id=$row[applicationid]'>Approve</a>
+                            <a class='btn btn-success btn-sm' href='approve_application.php?app_id=$row[applicationid]&id=$array[userid]&userlevel=$userlevel'>Approve</a>
                             <a class='btn btn-danger btn-sm' href='reject_application.php?id=$row[applicationid]'>Reject</a>
-                            <a class='btn btn-primary btn-sm' href='../view_application.php?id=$row[applicationid]'>View</a>
+                            <a class='btn btn-primary btn-sm' href='../Student/view_student_application.php?app_id=$row[applicationid]&id=$array[userid]&userlevel=$userlevel'>View</a>
                             </td>
                         </tr> 
                         ";
