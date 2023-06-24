@@ -193,7 +193,7 @@ $applicationstatus = $row4["applicationstatus"]
                 <?php elseif ($userlevel == 1 || $userlevel == 2): ?>
                     <div class="row mb-3">
                     <div class="offset-sm-3 col-sm-3 d-grid">
-                        <a href="../application_list.php" class="btn btn-primary">Return</a>
+                        <a href="../Coordinator/application_list.php" class="btn btn-primary">Return</a>
                     </div>
                     </div>
             <?php endif; ?>

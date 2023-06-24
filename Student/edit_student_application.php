@@ -58,12 +58,12 @@ $userlevel= $_GET["userlevel"];
 
   if ($result && $result2 && $result3) {
     if ($userlevel == 1 || $userlevel == 2) {
-      header('location: ../application_list.php');
+      header('location: ../Coordinator/application_list.php');
     } else if ($userlevel == 3) {
       header('location: student_application_list.php');
     }
   } else {
-    header('location: ../application_list.php');
+    header('location: ../Coordinator/application_list.php');
       // header('location: student_application_form.php');
   }
 

@@ -12,6 +12,26 @@
 </head>
 
 <body>
+<?php
+                require_once("../config.php");
+                require_once("../functions.php"); 
+
+                session_start() ;
+                $userID = $_SESSION['USER_ID']; 
+                $array = array();
+                $query = mysqli_query($conn, "SELECT * FROM login WHERE fk_userid = $userID") or die(mysqli_connect_error());
+                $row2 = mysqli_fetch_assoc($query);
+                $userlevel = $row2['userlevel'];
+
+                if ($userlevel == 1) {
+                    include('../includes/headerAdmin.html');
+                } 
+                else if($userlevel == 2) {
+                    include('../includes/headerCoordinator.html');
+                }else if ($userlevel == 3) {
+                    include('../includes/headerStudent.html');
+                }
+?>
     <div class="container my-5">
         <h2>Full Application List</h2>
         <p><i>Full List Only Accessible to Admins and Coordinators</i></p>
@@ -33,18 +53,11 @@
 
             <tbody>
                 <?php
-                require_once("config.php");
-                require_once("functions.php"); 
 
-                session_start() ;
-                $userID = $_SESSION['USER_ID']; 
 
 
                 // Retrieve data from table
-                $array = array();
-                $query = mysqli_query($conn, "SELECT * FROM login WHERE fk_userid = $userID") or die(mysqli_connect_error());
-                $row2 = mysqli_fetch_assoc($query);
-                $userlevel = $row2['userlevel'];
+
                 $select = "SELECT * from practical_training ORDER BY fk_userid ASC";
                 $sql = mysqli_query($GLOBALS['conn'], $select);
                 if (mysqli_num_rows($sql) > 0) {
@@ -61,9 +74,9 @@
                             <td>$row[applicationtitle]</td>
                             <td>$row[applicationstatus]</td>
                             <td>
-                                <a class='btn btn-primary btn-sm' href='Student/edit_student_application_form.php?app_id=$row[applicationid]&id=$array[userid]&userlevel=$userlevel'>Edit</a>
-                                <a class='btn btn-danger btn-sm' href='Student/delete_student_application.php?app_id=$row[applicationid]'>Delete</a>
-                                <a class='btn btn-dark btn-sm' href='Student/view_student_application.php?app_id=$row[applicationid]&id=$array[userid]&userlevel=$userlevel'>View</a>
+                                <a class='btn btn-primary btn-sm' href='../Student/edit_student_application_form.php?app_id=$row[applicationid]&id=$array[userid]&userlevel=$userlevel'>Edit</a>
+                                <a class='btn btn-danger btn-sm' href='../Student/delete_student_application.php?app_id=$row[applicationid]'>Delete</a>
+                                <a class='btn btn-dark btn-sm' href='../Student/view_student_application.php?app_id=$row[applicationid]&id=$array[userid]&userlevel=$userlevel'>View</a>
                             </td>
                         </tr> 
                         ";
@@ -77,7 +90,7 @@
             </tbody>
         </table>
     </div>
-    <?php include('includes/footer.html'); ?>
+    <?php include('../includes/footer.html'); ?>
 </body>
 
 </html>
