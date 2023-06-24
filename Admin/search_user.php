@@ -8,13 +8,16 @@
     <title>Search All Users</title>
     <!-- Bootstrap Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="../Admin/adminstyle.css">
 </head>
 
 <body>
+    <link rel="stylesheet" href="../Admin/adminstyle.css"><?php
+    include('../includes/headerAdmin.html');
+    ?>
     <div class="container my-5">
-        <h2>Search All Users</h2>
-        <p><i>Accessible to Admins</i></p>
+        <h2 style="text-align:center; font-weight:bold">Search All Users</h2>
+        <p style="text-align:center; font-weight:bold"><i>Accessible to Admins</i></p>
         <!-- <a class="btn btn-primary" href="user_form.php" role="button">Add User</a> -->
         <br>
         <table class="table">
@@ -74,7 +77,7 @@
                         $count++;
                     }
                 } else {
-                    echo "0 results";
+                    echo "<a id='echo' style='color:black; text-align:left;'>0 results</a>";
                 }
                 // $array = array();
                 // $select = "SELECT * from users WHERE $column LIKE '%$search%'";
@@ -105,6 +108,10 @@
                 ?>
             </tbody>
         </table>
+    </div>
+    <?php
+    include('../includes/footer.html');
+    ?>
 </body>
 
 </html>

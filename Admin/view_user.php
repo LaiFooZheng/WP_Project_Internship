@@ -36,8 +36,11 @@ if (mysqli_num_rows($tab1) == 1) {
 </head>
 
 <body>
+    <?php
+    include('../includes/headerAdmin.html');
+    ?>
     <div class="container my-5">
-        <h2>View User</h2>
+        <h2 style="text-align:center; font-weight:bold">View User</h2>
         <input type="hidden" name="id" value="<?php echo $id; ?>">
         <div class="row mb-3">
             <label class="col-sm-3 col-form-label">Full Name</label>
@@ -92,11 +95,14 @@ if (mysqli_num_rows($tab1) == 1) {
         <div class="row mb-3">
             <div class="offset-sm-3 col-sm-3 d-grid">
                 <?php
-                echo "<a class='btn btn-primary' href='edit_user_form.php?id=$id'>Edit</a>";
+                echo "<a class='btn btn-primary' href='edit_user_form.php?id=$id' style=''>Edit</a>";
                 ?>
             </div>
         </div>
     </div>
+    <?php
+    include('../includes/footer.html');
+    ?>
 </body>
 
 </html>

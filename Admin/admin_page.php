@@ -42,6 +42,11 @@
             </select>
             <br>
             <input class="co-homepage-submit" type="submit" value="Search"> <!--added value-->
+        </div>
     </form>
+    <?php
+    include('../includes/footer.html');
+    ?>
 </body>
+    
 </html>
