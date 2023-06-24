@@ -38,7 +38,7 @@
             display: flex;
             align-items: center;
             justify-content: space-around;
-            height: 300px;
+            height: 100px;
             width: 100%;
             background-image: linear-gradient(135deg, #d6d6d6 10%, #868686 100%);
         }
@@ -55,8 +55,8 @@
 
 </head>
 <body>
-    <!-- <?php
-    echo ' -->
+     <?php
+    echo '
     <footer>
         <section id="text">
         <ul>
@@ -65,8 +65,7 @@
           <li><a href="#">Company Details</a></li>
         </ul>
         </section>
-        <!-- <img src="/img/3.png" style="height: 100px;"> -->
-    </footer><!-- ';
-    ?> -->
+    </footer> '
+    ?>
 </body>
 </html>

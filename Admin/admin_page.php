@@ -1,17 +1,18 @@
 <html>
-
 <head>
-    <link rel="shortcut icon" href="../images/transparent-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/2.png" type="image/x-icon">
 </head>
 
 <body>
-    <?php include('admin.html'); ?>
+    <?php
+    include('../includes/headerAdmin.html');
+    ?>
 
     <div class="industry-background">
-        <img src="../images/background-img3.jpg" style="width: 100%;">
+        <img src="../img/background-img3.jpg" style="width: 100%;">
         <div class="homepage-caption">
-            <p class="cCaption">Best Practical Training Management System</p>
-            <p class="cCaption2"><i>"RECOMENDED BY MANY INDUSTRY LEADERS"</i></p>
+            <p style="text-align: center;"><b>Best Internship Management System</b></p>
+            <p style="text-align: center;"><i><b>"RECOMENDED BY MANY INDUSTRY LEADERS"</b></i></p>
         </div>
     </div>
 

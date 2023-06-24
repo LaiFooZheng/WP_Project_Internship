@@ -1,0 +1,13 @@
+#updatelist {
+    display: block;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+
+a:hover {
+    font-size: larger;
+    transition: 0.5s;
+}
