@@ -34,7 +34,7 @@ mysqli_close($conn);
     <BR><BR>
     <a href="user_list.php">Click here to list the guests</a>
     <?php
-    include('../includes/footer.php');
+    include('../includes/footer.html');
     ?>
 </body>
 

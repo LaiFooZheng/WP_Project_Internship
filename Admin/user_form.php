@@ -37,7 +37,6 @@
                         echo htmlspecialchars($_POST['password']); ?>">
                 </div>
             </div>
-            <!-- maybe add a password confirmation field -->
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Email:</label>
                 <div class="col-sm-6">
@@ -82,7 +81,7 @@
         </form>
     </div>
     <?php
-    include('../includes/footer.php');
+    include('../includes/footer.html');
     ?>
 </body>
 

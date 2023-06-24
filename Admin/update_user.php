@@ -49,7 +49,7 @@ mysqli_close($conn);
     <BR><BR>
     <a href="user_list.php">Click here to see the user list</a>
     <?php
-    include('../includes/footer.php');
+    include('../includes/footer.html');
     ?>
 </body>
 

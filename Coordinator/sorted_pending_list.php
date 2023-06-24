@@ -8,12 +8,6 @@
     <title>Application List</title>
     <!-- Bootstrap Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="coordinator_page.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cousine&family=Montserrat:ital,wght@0,400;1,200&display=swap"
-        rel="stylesheet">
 
 </head>
 
@@ -24,7 +18,7 @@
     <div class="container my-5">
         <h2>Pending Application List</h2>
         <p><i>Pending List Only Accessible to Coordinators</i></p>
-        <a class="btn btn-primary" href="sorted_pending_list.php" role="button">Sort List by Date</a>
+        <a class="btn btn-primary" href="approve_reject_list.php" role="button">Original List</a>
         <br>
         <table class="table">
             <thead>
@@ -46,7 +40,7 @@
 
                 // Retrieve data from table
                 $array = array();
-                $select = "SELECT * from practical_training WHERE applicationstatus = 'Submitted'";
+                $select = "SELECT * from practical_training WHERE applicationstatus = 'Submitted' ORDER BY applicationdate ASC";
                 $sql = mysqli_query($GLOBALS['conn'], $select);
                 $count = 1;
 
@@ -84,6 +78,6 @@
     <?php
     include('../includes/footer.html');
     ?>
-
 </body>
+
 </html>

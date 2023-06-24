@@ -10,7 +10,7 @@
 </head>
 
 <?php
-include "mysqli_connect.php";
+require_once("../config.php");
 session_start();
 $id = $_SESSION['userid'];
 $_SESSION['t_id'] = $_GET['t_id'];

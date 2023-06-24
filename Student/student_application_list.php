@@ -48,6 +48,9 @@
 
                     // Retrieve data from the table
                     $array = array();
+                    $query = mysqli_query($conn, "SELECT * FROM login WHERE fk_userid = $studentId") or die(mysqli_connect_error());
+                    $row2 = mysqli_fetch_assoc($query);
+                    $userlevel = $row2['userlevel'];
                     $select = "SELECT * FROM practical_training WHERE fk_userid = $studentId AND applicationstatus = 'Submitted'";
                     $sql = mysqli_query($GLOBALS['conn'], $select);
 
@@ -66,8 +69,8 @@
                                   <td>$row[applicationtitle]</td>
                                   <td>$row[applicationstatus]</td>
                                   <td>
-                                      <a class='btn btn-primary btn-sm' href='edit_student_application_form.php?id=$row[applicationid]'>Edit</a>
-                                      <a class='btn btn-danger btn-sm' href='delete_student_application.php?id=$row[applicationid]'>Delete</a>
+                                      <a class='btn btn-primary btn-sm' href='edit_student_application_form.php?app_id=$row[applicationid]&userlevel=$userlevel'>Edit</a>
+                                      <a class='btn btn-danger btn-sm' href='delete_student_application.php?app_id=$row[applicationid]'>Delete</a>
                                       <a class='btn btn-dark btn-sm' href='view_student_application.php?id=$row[applicationid]'>View</a>
                                   </td>
                               </tr> 
