@@ -101,7 +101,7 @@ if (mysqli_num_rows($tab1) == 1) {
         </form>
     </div>
     <?php
-    include('../includes/footer.php');
+    include('../includes/footer.html');
     ?>
 </body>
 
