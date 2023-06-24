@@ -10,11 +10,8 @@
     ?>
 
     <div class="industry-background">
-        <img src="../img/CoordinatorPageBackground.jpg" style="width: 100%; ">
-        <div class="homepage-caption">
-            <p class="cCaption">Best Internship Management System</p>
-            <p class="cCaption2"><i>"RECOMENDED BY MANY INDUSTRY LEADERS"</i></p>
-        </div>
+        <img src="../img/CoordinatorPageBackground2.png" style="width: 100%; ">
+
     </div>
 
     <br> <br>
