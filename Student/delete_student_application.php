@@ -28,8 +28,16 @@ mysqli_close($conn);
 </head>
 
 <body>
+    <?php
+    include('../includes/headerStudent.html');
+    ?>
+
     <BR><BR>
     <a href="student_application_list.php">Click here to view updated application list</a>
+
+    <?php
+    include('../includes/footer.html');
+    ?>
 </body>
 
 </html>

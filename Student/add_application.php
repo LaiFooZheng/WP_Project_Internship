@@ -10,6 +10,9 @@
 </head>
 
 <body>
+  <?php
+  include('../includes/headerStudent.html');
+  ?>
 
   
   <?php
@@ -77,7 +80,9 @@
 	<!-- <br> -->
 	<!-- Need to add UI for this updated page and error checking -->
 	<!-- <a href="student_application_list.php">Click here to see the updated application list</a> -->
-
+  <?php
+    include('../includes/footer.html');
+    ?>
 </body>
 
 </html>

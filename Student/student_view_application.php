@@ -1,7 +1,7 @@
 <html>
 
 <head>
-	<title>Practical Training Application</title>
+	<title>Internship Application</title>
 	<link rel="shortcut icon" href="../images/transparent-logo.png" type="image/x-icon">
 	<link rel="stylesheet" href="../style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,33 +20,11 @@ $row = mysqli_fetch_array($query);
 ?>
 
 <body>
-<div class="outercontainer-nav">
-		<div class="container-logo">
-			<a href="../Student.php"><img src="../images/transparent-logo.png" alt="Logo" id="img-logo"></a>
-			<p class="title">Students' Practical Training Management System</p>
-		</div>
+	<?php
+    include('../includes/headerStudent.html');
+    ?>
 
-		<div class="dropdown">
-			<button class="dropbtn-logo"><img src="../images/student-girl.png" alt="Student girl logo" width="400px">
-				<p>STUDENT</p>
-			</button>
-			<div class="dropdown-content">
-				<a href="edit_student_profile.php">Profile</a>
-				<a href="login.html">Log out</a>
-			</div>
-		</div>
-	</div>
-
-	<nav class="stroke">
-		<ul>
-			<li><a href="../Student.php">Home</a></li>
-			<li><a href="application_homepage.php">Apply</a></li>
-			<li><a href="report_homepage.php">Report</a></li>
-		</ul>
-	</nav>
-	<!--end of header-->
-
-		<h1 style="text-align: center; margin-top: 50px;">Application of Practical Training Session</h1>
+		<h1 style="text-align: center; margin-top: 50px;">Application of Internship Session</h1>
 		<label style="display: block; text-align: end; ">
 			<b>Date :</b>
 			<input type="text" style="font-size:15px; font-weight:bold;" id="remove-border" name="applicationdate" value="<?php echo $row['applicationdate']; ?>" readonly />
@@ -117,7 +95,7 @@ $row = mysqli_fetch_array($query);
 						</table>
 					</div>
 					<div class="tableC">
-						<h2>C. Practical Training Information</h2>
+						<h2>C. Internship Information</h2>
 						<table>
 							<tr>
 								<td id="num">1.</td>
@@ -146,7 +124,7 @@ $row = mysqli_fetch_array($query);
 				</div>
 			</form>
 		</div>
-		<?php include '../includes/footer.php' ?>
+		<?php include '../includes/footer.html' ?>
 </body>
 
 </html>

@@ -19,8 +19,11 @@ $row = mysqli_fetch_array($query);
 ?>
 
 <body>
+    <?php
+    include('../includes/headerStudent.html');
+    ?>
 
-    <h1 style="text-align: center; margin-top: 50px;">Application of Practical Training Session</h1>
+    <h1 style="text-align: center; margin-top: 50px;">Application of Internship Session</h1>
       <label style="display: block; text-align: end;">
         <b>Date :</b>
         <input id="remove-border" style="font-size:15px; font-weight: bold;" type="text" name="applicationdate" value="<?php date_default_timezone_set("Asia/Kuala_Lumpur");																																echo date("d-M-Y"); ?>" readonly />
@@ -112,7 +115,7 @@ $row = mysqli_fetch_array($query);
                         echo htmlspecialchars($row['companyEmail']); ?>" required>
                 </div>
             </div>        
-        <h2>Practical Training Information</h2>
+        <h2>Internship Information</h2>
 
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Department Name</label>
@@ -219,6 +222,10 @@ $row = mysqli_fetch_array($query);
             </div>
         </form>
     </div>
+
+    <?php
+    include('../includes/footer.html');
+    ?>
 </body>
 
 </html>

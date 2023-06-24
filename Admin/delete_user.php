@@ -1,3 +1,9 @@
+<head>
+<link rel="stylesheet" href="../Admin/adminstyle.css">
+</head>
+    <?php
+    include('../includes/headerAdmin.html');
+    ?>
 <?php
 
 require_once("../config.php");
@@ -9,7 +15,7 @@ if (isset($_GET["id"])) {
 $sql = "DELETE FROM users WHERE userid = $id LIMIT 1";
 
 if (mysqli_query($conn, $sql)) {
-    echo "User deleted successfully";
+    echo "<a id='echo'>User deleted successfully &#9745</a>";
 } else {
     echo "Error deleting user: " . mysqli_error($conn);
 }
@@ -28,14 +34,14 @@ mysqli_close($conn);
 </head>
 
 <body>
-    <?php
-    include('../includes/headerAdmin.html');
-    ?>
+    
     <BR><BR>
-    <a href="user_list.php">Click here to list the guests</a>
+    <section id="userlist">
+    <a href="user_list.php" id="userlist">Click here to list the guests</a>
+    </section>
     <?php
     include('../includes/footer.html');
     ?>
 </body>
-
+    
 </html>
