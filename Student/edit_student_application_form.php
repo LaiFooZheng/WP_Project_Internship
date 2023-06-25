@@ -13,12 +13,15 @@
 <?php
 require_once("../config.php");
 session_start();
-
+$column= false;
 $app_id = $_GET["app_id"];
 $userlevel = $_GET["userlevel"];
 $id = $_SESSION['USER_ID'];
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
+}
+if (isset($_GET["column"])) {
+    $column= true;  
 }
 
 $query = mysqli_query($conn, "SELECT * FROM users where userid = '$id'") or die(mysqli_connect_error());
@@ -68,7 +71,7 @@ $address = $row["address"];
     <div class="container my-5">
         <h2>Personal Information</h2>
         <form method="post"
-            action="edit_student_application.php?app_id=<?php echo $app_id; ?>&userlevel=<?php echo $userlevel; ?>">
+            action="edit_student_application.php?app_id=<?php echo $app_id; ?>&userlevel=<?php echo $userlevel; ?>&column=<?php echo $column; ?>">
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Full Name</label>
                 <div class="col-sm-6">

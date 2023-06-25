@@ -143,16 +143,16 @@ VALUES (
 INSERT INTO practical_training
 VALUES (
         10,
-        "Miscrosoft/UIUX-dessigner",
+        "Miscrosoft/UIUX-designer",
         "24-Jun-2022",
         "Submitted",
         6
     );
 -- -- Populate User Detail Table
 INSERT INTO user_detail
-VALUES ("Female", "A001", "Malaysia", 1);
+VALUES ("Male", "A001", "Malaysia", 1);
 INSERT INTO user_detail
-VALUES ("Female", "A002", "Malaysia", 2);
+VALUES ("Male", "A002", "Malaysia", 2);
 INSERT INTO user_detail
 VALUES ("Male", "A003", "Malaysia", 3);
 INSERT INTO user_detail
@@ -161,6 +161,14 @@ INSERT INTO user_detail
 VALUES ("Male", "A005", "Malaysia", 5);
 INSERT INTO user_detail
 VALUES ("Male", "A006", "Malaysia", 6);
+INSERT INTO user_detail
+VALUES ("Male", "A007", "Malaysia", 7);
+INSERT INTO user_detail
+VALUES ("Male", "A008", "Malaysia", 8);
+INSERT INTO user_detail
+VALUES ("Male", "A009", "Malaysia", 9);
+INSERT INTO user_detail
+VALUES ("Male", "A010", "Malaysia", 10);
 -- -- Populate Company Table
 INSERT INTO company
 VALUES (
