@@ -54,7 +54,7 @@ VALUES (
         21,
         "017-7449148"
     );
--- Populate Login Table (Defaullt 4 Users)
+-- Populate Login Table (Defaullt 6 Users)
 INSERT INTO login
 VALUES ("admin", "admin", 1, 1);
 INSERT INTO login
@@ -62,11 +62,11 @@ VALUES ("coordinator", "coordinator", 2, 2);
 INSERT INTO login
 VALUES ("foozheng", "foozheng", 3, 3);
 INSERT INTO login
-VALUES ("adamm", "adamm", 4, 3);
+VALUES ("adamm", "adamm", 3, 4);
 INSERT INTO login
-VALUES ("wlong", "wlong", 5, 3);
+VALUES ("wlong", "wlong", 3, 5);
 INSERT INTO login
-VALUES ("weichun", "weichun", 6, 3);
+VALUES ("weichun", "weichun", 3, 6);
 -- Populate Practical Training Table
 INSERT INTO practical_training
 VALUES (
