@@ -6,6 +6,12 @@ if (isset($_POST["id"])) {
     $id = $_POST["id"];
 }
 
+session_start();
+$userID = $_SESSION['USER_ID'];
+$query = mysqli_query($conn, "SELECT * FROM login WHERE fk_userid = $userID") or die(mysqli_connect_error());
+$row2 = mysqli_fetch_assoc($query);
+$userlevel2 = $row2['userlevel'];
+
 $fullname = $_POST["fullname"];
 $username = $_POST["username"];
 $password = $_POST["password"];
@@ -29,11 +35,11 @@ if (mysqli_query($conn, $sql1)) {
 
 echo '<br>';
 
-if ($userlevel == 1) {
+if ($userlevel2 == 1) {
     header('location: Admin/admin_page.php');
-} else if ($userlevel == 2) {
+} else if ($userlevel2 == 2) {
     header('location: Coordinator/coordinator_page.php');
-} else if ($userlevel == 3) {
+} else if ($userlevel2 == 3) {
     header('location: Student/student_page.php');
 }
 mysqli_close($conn);
