@@ -4,6 +4,11 @@ include("config.php");
 session_start();
 $id = $_SESSION['USER_ID'];
 
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+}
+
+
 $sql1 = "SELECT * FROM users where userid='$id'";
 $tab1 = mysqli_query($conn, $sql1) or die(mysqli_connect_error());
 
@@ -92,7 +97,8 @@ if (mysqli_num_rows($tab1) == 1) {
         </div>
         <div class="row mb-3">
             <div class="offset-sm-3 col-sm-3 d-grid">
-                <a class="btn btn-primary" href="edit_profile.php">Edit</a>
+            <a class="btn btn-primary" href="edit_profile.php?id=<?php echo $id; ?>">Edit</a>
+
             </div>
         </div>
     </div>

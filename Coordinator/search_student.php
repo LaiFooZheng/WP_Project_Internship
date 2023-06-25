@@ -59,7 +59,7 @@
                             <td>$row[age]</td>
                             <td>$row[address]</td>
                             <td>
-                                <a class='btn btn-dark btn-sm' href='view_user.php?id=$row[id]'>View</a>
+                                <a class='btn btn-dark btn-sm' href='../view_profile.php?id=$row[id]'>View</a>
                             </td>
                         </tr> 
                         ";

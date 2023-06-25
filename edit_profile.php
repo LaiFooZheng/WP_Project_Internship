@@ -3,6 +3,10 @@
 include("config.php");
 session_start();
 $id = $_SESSION['USER_ID'];
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+  }
+
 
 $sql1 = "SELECT * FROM users where userid='$id'";
 $tab1 = mysqli_query($conn, $sql1) or die(mysqli_connect_error());
