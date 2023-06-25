@@ -12,6 +12,9 @@
 </head>
 
 <body>
+    <?php
+    include('../includes/headerCoordinator.html');
+    ?>
     <div class="container my-5">
         <h2 style="text-align:center; font-weight:bold">Search Application List</h2>
         <p style="text-align:center; font-weight:bold"><i>Accessible to Coordinators</i></p>
@@ -74,6 +77,10 @@
                 ?>
             </tbody>
         </table>
+    </div>
+    <?php
+    include('../includes/footer.html');
+    ?>
 </body>
 
 </html>
