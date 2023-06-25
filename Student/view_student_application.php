@@ -14,10 +14,15 @@
 require_once("../config.php");
 session_start();
 $app_id = $_GET["app_id"];
+$column= false;
+
 $userlevel= $_GET["userlevel"];
 $id = $_SESSION['USER_ID'];
 if (isset($_GET["id"])) {
     $id = $_GET["id"];  
+}
+if (isset($_GET["column"])) {
+    $column= true;  
 }
 
 $query = mysqli_query($conn, "SELECT * FROM users where userid = '$id'") or die(mysqli_connect_error());
@@ -199,7 +204,11 @@ $applicationstatus = $row4["applicationstatus"]
                 <?php elseif ( $userlevel == 2): ?>
                     <div class="row mb-3">
                     <div class="offset-sm-3 col-sm-3 d-grid">
-                        <a href="../Coordinator/coordinator_page.php" class="btn btn-primary">Return</a>
+                    <?php if ($column == true): ?>
+                            <a href="../Coordinator/coordinator_page.php" class="btn btn-primary">Return</a>
+                        <?php else: ?>
+                            <a href="../Coordinator/application_list.php" class="btn btn-primary">Return</a>
+                        <?php endif; ?>
                     </div>
                     </div>
 
