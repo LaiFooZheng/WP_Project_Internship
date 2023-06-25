@@ -183,19 +183,26 @@ $applicationstatus = $row4["applicationstatus"]
                 
                 <div class="row mb-3">
                     <div class="offset-sm-3 col-sm-3 d-grid">
-                        <?php if ($applicationstatus == 'Approved'): ?>
+                        <?php if ($applicationstatus == 'Approved' || $applicationstatus == 'Rejected'): ?>
                             <a href="report_approved.php" class="btn btn-primary">Return</a>
                         <?php else: ?>
                             <a href="student_application_list.php" class="btn btn-primary">Return</a>
                         <?php endif; ?>
                     </div>
                     </div>
-                <?php elseif ($userlevel == 1 || $userlevel == 2): ?>
+                <?php elseif ($userlevel == 1): ?>
                     <div class="row mb-3">
                     <div class="offset-sm-3 col-sm-3 d-grid">
                         <a href="../Coordinator/application_list.php" class="btn btn-primary">Return</a>
                     </div>
                     </div>
+                <?php elseif ( $userlevel == 2): ?>
+                    <div class="row mb-3">
+                    <div class="offset-sm-3 col-sm-3 d-grid">
+                        <a href="../Coordinator/coordinator_page.php" class="btn btn-primary">Return</a>
+                    </div>
+                    </div>
+
             <?php endif; ?>
         </form>
     </div>
