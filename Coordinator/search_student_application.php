@@ -68,9 +68,9 @@
                             <td>$row[applicationtitle]</td>
                             <td>$row[applicationstatus]</td>
                             <td>
-                                <a class='btn btn-primary btn-sm' href='edit_user_form.php?id=$row[applicationid]'>Edit</a>
+                                <a class='btn btn-primary btn-sm' href='../Student/edit_student_application_form.php?id=$row[applicationid]&id=$array[userid]&userlevel=$userlevel'>Edit</a>
                                 <a class='btn btn-danger btn-sm' href='delete_user.php?id=$row[applicationid]'>Delete</a>
-                                <a class='btn btn-dark btn-sm' href='../Student/view_student_application.php?app_id=$row[applicationid]&id=$array[userid]&userlevel=$userlevel'>View</a>
+                                <a class='btn btn-dark btn-sm' href='../Student/view_student_application.php?app_id=$row[applicationid]&id=$array[userid]&userlevel=$userlevel&column=$column'>View</a>
                             </td>
                         </tr> 
                         ";
