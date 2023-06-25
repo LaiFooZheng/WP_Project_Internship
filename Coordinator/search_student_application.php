@@ -41,8 +41,15 @@
                 require_once("../config.php");
                 require_once("../functions.php");
 
+                session_start();
+                $studentId = $_SESSION['USER_ID']; 
+
+
                 // Retrieve data from table
                 $array = array();
+                $query = mysqli_query($conn, "SELECT * FROM login WHERE fk_userid = $studentId") or die(mysqli_connect_error());
+                $row2 = mysqli_fetch_assoc($query);
+                $userlevel = $row2['userlevel'];
                 $select = "SELECT * from practical_training WHERE $column LIKE '%$search%'";
                 $sql = mysqli_query($GLOBALS['conn'], $select);
                 $count = 1;
@@ -63,11 +70,12 @@
                             <td>
                                 <a class='btn btn-primary btn-sm' href='edit_user_form.php?id=$row[applicationid]'>Edit</a>
                                 <a class='btn btn-danger btn-sm' href='delete_user.php?id=$row[applicationid]'>Delete</a>
-                                <a class='btn btn-dark btn-sm' href='view_user.php?id=$row[applicationid]'>View</a>
+                                <a class='btn btn-dark btn-sm' href='../Student/view_student_application.php?app_id=$row[applicationid]&id=$array[userid]&userlevel=$userlevel'>View</a>
                             </td>
                         </tr> 
                         ";
                         $count++;
+
                     }
                 } else {
                     echo "<a id='echo' style='color:black; text-align:left;'>0 results</a>";

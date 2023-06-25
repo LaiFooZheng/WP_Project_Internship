@@ -51,7 +51,7 @@
                     $query = mysqli_query($conn, "SELECT * FROM login WHERE fk_userid = $studentId") or die(mysqli_connect_error());
                     $row2 = mysqli_fetch_assoc($query);
                     $userlevel = $row2['userlevel'];
-                    $select = "SELECT * FROM practical_training WHERE fk_userid = $studentId AND applicationstatus = 'Approved'";
+                    $select = "SELECT * FROM practical_training WHERE fk_userid = $studentId AND applicationstatus = 'Approved'OR applicationstatus = 'Rejected'";
                     $sql = mysqli_query($GLOBALS['conn'], $select);
 
                     // Check if the query executed successfully
