@@ -19,7 +19,7 @@
     <form action="search_user.php" method="post">
         <div class="admin-links">
             <b> <a href="user_list.php"><label class="ad-homepage-btn">View All Users</label></a>
-                <a href="../application_list.php"><label class="ad-homepage-btn">View Student Applications</label></a>
+                <a href="../Coordinator/application_list.php"><label class="ad-homepage-btn">View Student Applications</label></a>
             </b>
         </div>
     </form>
