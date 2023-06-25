@@ -11,7 +11,7 @@ $userlevel= $_GET["userlevel"];
 
   // Retrieve the updated values from the form or any other source
   $application_title = $_POST['companyName'] . "/" . $_POST['jobTitle'];
-  $status = "submitted";
+  $status = "Submitted";
   $fullname = $_POST["fullname"];
   $matricnumber = $_POST["matricnumber"];
   $age = $_POST["age"];

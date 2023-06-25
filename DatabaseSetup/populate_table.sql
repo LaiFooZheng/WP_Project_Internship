@@ -54,7 +54,7 @@ VALUES (
         21,
         "017-7449148"
     );
--- Populate Login Table (Defaullt 4 Users)
+-- Populate Login Table (Defaullt 6 Users)
 INSERT INTO login
 VALUES ("admin", "admin", 1, 1);
 INSERT INTO login
