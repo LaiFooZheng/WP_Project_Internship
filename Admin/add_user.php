@@ -6,10 +6,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Insert Guest</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../Admin/adminstyle.css">
 </head>
 
 <body>
+	<?php
+    include('../includes/headerAdmin.html');
+    ?>
 	<?php
 	$fullname = $_POST["fullname"];
 	$username = $_POST["username"];
@@ -31,7 +34,7 @@
 	mysqli_query($conn, $sql2) or die(mysqli_connect_error());
 	
 	if (mysqli_affected_rows($conn) == 1) {
-		echo "New user created successfully";
+		echo "<a id='echo'>New user created successfully &#9745</a>";
 	} else {
 		echo "User cannot be created\n";
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -42,8 +45,12 @@
 
 	<br>
 	<!-- Need to add UI for this updated page and error checking -->
-	<a href="user_list.php">Click here to see the updated user list</a>
-
+	<section id="updatelist">
+	<a href="user_list.php" id="updatelist">Click here to see the updated user list</a>
+	</section>
+	<?php
+    include('../includes/footer.html');
+    ?>
 </body>
 
 </html>

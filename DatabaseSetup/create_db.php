@@ -13,7 +13,7 @@ if (!$conn) {
 // Create database
 $sql = "CREATE DATABASE internship";
 if (mysqli_query($conn, $sql)) {
-	echo "Internship database created successfully";
+	echo "Internship database created successfully <br>";
 
 	// Execute SQL statements from create_table.sql
 	$createTableFile = __DIR__ . "/create_table.sql"; // Path to the create_table.sql file
@@ -22,7 +22,7 @@ if (mysqli_query($conn, $sql)) {
 		while (mysqli_more_results($conn) && mysqli_next_result($conn)) {
 			// Consume the result set
 		}
-		echo "Tables created successfully\n";
+		echo "Tables created successfully <br>";
 
 		// Execute SQL statements from populate_table.sql
 		$populateTableFile = __DIR__ . "/populate_table.sql"; // Path to the populate_table.sql file
@@ -31,7 +31,7 @@ if (mysqli_query($conn, $sql)) {
 			while (mysqli_more_results($conn) && mysqli_next_result($conn)) {
 				// Consume the result set
 			}
-			echo "Data inserted successfully";
+			echo "Data inserted successfully <br>";
 		} else {
 			echo "Error executing populate_table.sql statements: " . mysqli_error($conn);
 		}

@@ -1,5 +1,10 @@
+<head>
+<link rel="stylesheet" href="../Admin/adminstyle.css">
+</head>
+    <?php
+    include('../includes/headerAdmin.html');
+    ?>
 <?php
-
 require_once("../config.php");
 
 //if null, you can your own js script that shows alert box or error message
@@ -24,7 +29,7 @@ $sql2 = "UPDATE login SET username='$username', password='$password', userlevel=
 mysqli_query($conn, $sql2) or die(mysqli_connect_error());
 
 if (mysqli_query($conn, $sql1)) {
-    echo "Record updated successfully";
+    echo "<a id='echo'>Record updated successfully &#9745</a>";
 } else {
     echo "Error updating record: " . mysqli_error($conn);
 }
@@ -43,8 +48,14 @@ mysqli_close($conn);
 </head>
 
 <body>
+    
     <BR><BR>
-    <a href="user_list.php">Click here to list the guests</a>
+    <section id="userlist">
+    <a href="user_list.php" id="userlist" style="text-decoration: none;">Click here to see the user list</a>
+    </section>
+    <?php
+    include('../includes/footer.html');
+    ?>
 </body>
 
 </html>

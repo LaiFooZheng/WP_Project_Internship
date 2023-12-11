@@ -17,9 +17,9 @@
     ?>
 
     <div class="container my-5">
-        <h2 style="text-align:center; font-weight:bold">Student Application List</h2>
+        <h2 style="text-align:center; font-weight:bold">Student Application Report List</h2>
         <p style="text-align:center; font-weight:bold"><i>Students Can Only View their own Applications</i></p>
-        <a class="btn btn-primary" href="student_application_form.php" role="button">New Application</a>
+        <!-- <a class="btn btn-danger" href="../login.html" role="button">LOGOUT</a> -->
         <br>
         <table class="table">
             <thead>
@@ -29,7 +29,7 @@
                     <th>Date Applied</th>
                     <th>Title</th>
                     <th>Status</th>
-                    <th>Action</th>
+                    <th></th>
                 </tr>
             </thead>
 
@@ -51,7 +51,7 @@
                     $query = mysqli_query($conn, "SELECT * FROM login WHERE fk_userid = $studentId") or die(mysqli_connect_error());
                     $row2 = mysqli_fetch_assoc($query);
                     $userlevel = $row2['userlevel'];
-                    $select = "SELECT * FROM practical_training WHERE fk_userid = $studentId AND applicationstatus = 'Submitted'";
+                    $select = "SELECT * FROM practical_training WHERE fk_userid = $studentId AND applicationstatus = 'Approved'OR applicationstatus = 'Rejected'";
                     $sql = mysqli_query($GLOBALS['conn'], $select);
 
                     // Check if the query executed successfully
@@ -69,15 +69,13 @@
                                   <td>$row[applicationtitle]</td>
                                   <td>$row[applicationstatus]</td>
                                   <td>
-                                      <a class='btn btn-primary btn-sm' href='edit_student_application_form.php?app_id=$row[applicationid]&userlevel=$userlevel'>Edit</a>
-                                      <a class='btn btn-danger btn-sm' href='delete_student_application.php?app_id=$row[applicationid]'>Delete</a>
-                                      <a class='btn btn-dark btn-sm' href='view_student_application.php?app_id=$row[applicationid]&userlevel=$userlevel'>View</a>
-                                  </td>
+                                  <a class='btn btn-dark btn-sm' href='view_student_application.php?app_id=$row[applicationid]&userlevel=$userlevel''>View</a>
+                                    </td>  
                               </tr> 
                               ";
                             }
                         } else {
-                            echo "<a id='echo' style='color:black; text-align:left;'>0 results</a>";
+                            echo "0 results";
                         }
 
                         mysqli_close($conn);
@@ -92,7 +90,7 @@
             </tbody>
         </table>
     </div>
-
+    
     <?php
     include('../includes/footer.html');
     ?>

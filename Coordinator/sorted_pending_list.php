@@ -5,17 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Application List</title>
+    <title>Application List</title>
     <!-- Bootstrap Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 
 </head>
 
 <body>
+    <?php
+    include('../includes/headerCoordinator.html');
+    ?>
     <div class="container my-5">
-        <h2>Search Application List</h2>
-        <p><i>Accessible to Coordinators</i></p>
-        <!-- <a class="btn btn-primary" href="user_form.php" role="button">Add User</a> -->
+        <h2 style="text-align:center; font-weight:bold">Pending Application List</h2>
+        <p style="text-align:center; font-weight:bold"><i>Pending List Only Accessible to Coordinators</i></p>
+        <a class="btn btn-primary" href="approve_reject_list.php" role="button">Original List</a>
         <br>
         <table class="table">
             <thead>
@@ -32,15 +35,12 @@
 
             <tbody>
                 <?php
-                $search = $_POST['search'];
-                $column = $_POST['column'];
-
-                require_once("config.php");
-                require_once("functions.php");
+                require_once("../config.php");
+                require_once("../functions.php");
 
                 // Retrieve data from table
                 $array = array();
-                $select = "SELECT * from practical_training WHERE $column LIKE '%$search%'";
+                $select = "SELECT * from practical_training WHERE applicationstatus = 'Submitted' ORDER BY applicationdate ASC";
                 $sql = mysqli_query($GLOBALS['conn'], $select);
                 $count = 1;
 
@@ -58,22 +58,26 @@
                             <td>$row[applicationtitle]</td>
                             <td>$row[applicationstatus]</td>
                             <td>
-                                <a class='btn btn-primary btn-sm' href='edit_user_form.php?id=$row[applicationid]'>Edit</a>
-                                <a class='btn btn-danger btn-sm' href='delete_user.php?id=$row[applicationid]'>Delete</a>
-                                <a class='btn btn-dark btn-sm' href='view_user.php?id=$row[applicationid]'>View</a>
+                            <a class='btn btn-success btn-sm' href='approve_application.php?id=$row[applicationid]'>Approve</a>
+                            <a class='btn btn-danger btn-sm' href='reject_application.php?id=$row[applicationid]'>Reject</a>
+                            <a class='btn btn-primary btn-sm' href='../view_application.php?id=$row[applicationid]'>View</a>
                             </td>
                         </tr> 
                         ";
                         $count++;
                     }
                 } else {
-                    echo "0 results";
+                    echo "<a id='echo' style='color:black; text-align:left;'>0 results</a>";
                 }
 
                 mysqli_close($conn);
                 ?>
             </tbody>
         </table>
+    </div>
+    <?php
+    include('../includes/footer.html');
+    ?>
 </body>
 
 </html>

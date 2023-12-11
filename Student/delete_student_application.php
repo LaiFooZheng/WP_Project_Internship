@@ -1,21 +1,15 @@
-<head>
-<link rel="stylesheet" href="../Admin/adminstyle.css">
-</head>
-    <?php
-    include('../includes/headerAdmin.html');
-    ?>
 <?php
 
 require_once("../config.php");
 
-if (isset($_GET["id"])) {
-    $id = $_GET["id"];
+if (isset($_GET["app_id"])) {
+    $id = $_GET["app_id"];
 }
 
-$sql = "DELETE FROM users WHERE userid = $id LIMIT 1";
+$sql = "DELETE FROM practical_training WHERE applicationid = $id LIMIT 1";
 
 if (mysqli_query($conn, $sql)) {
-    echo "<a id='echo'>User deleted successfully &#9745</a>";
+    echo "<a href='' id='echo'>User deleted successfully &#9745</a>";
 } else {
     echo "Error deleting user: " . mysqli_error($conn);
 }
@@ -34,14 +28,17 @@ mysqli_close($conn);
 </head>
 
 <body>
-    
-    <BR><BR>
-    <section id="userlist">
-    <a href="user_list.php" id="userlist">Click here to list the guests</a>
-    </section>
     <?php
+    include('../includes/headerStudent.html');
+    ?>
+
+    <BR><BR>
+    <!-- <a href="student_application_list.php">Click here to view updated application list</a> -->
+    
+    <?php
+    header("Location: " . $_SERVER['HTTP_REFERER']);
     include('../includes/footer.html');
     ?>
 </body>
-    
+
 </html>

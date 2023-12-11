@@ -12,9 +12,12 @@
 </head>
 
 <body>
+    <?php
+    include('../includes/headerCoordinator.html');
+    ?>
     <div class="container my-5">
-        <h2>Search Student Profile</h2>
-        <p><i>Accessible to Coordinators</i></p>
+        <h2 style="text-align:center; font-weight:bold">Search Student Profile</h2>
+        <p style="text-align:center; font-weight:bold"><i>Accessible to Coordinators</i></p>
         <!-- <a class="btn btn-primary" href="user_form.php" role="button">Add User</a> -->
         <br>
         <table class="table">
@@ -36,8 +39,8 @@
                 $search = $_POST['search'];
                 $column = $_POST['column'];
 
-                require_once("config.php");
-                require_once("functions.php");
+                require_once("../config.php");
+                require_once("../functions.php");
 
                 // Retrieve data from table
                 $array = array();
@@ -59,20 +62,24 @@
                             <td>$row[age]</td>
                             <td>$row[address]</td>
                             <td>
-                                <a class='btn btn-dark btn-sm' href='view_user.php?id=$row[id]'>View</a>
+                                <a class='btn btn-dark btn-sm' href='../view_profile.php?id=$row[id]'>View</a>
                             </td>
                         </tr> 
                         ";
                         $count++;
                     }
                 } else {
-                    echo "0 results";
+                    echo "<a id='echo' style='color:black; text-align:left;'>0 results</a>";
                 }
 
                 mysqli_close($conn);
                 ?>
             </tbody>
         </table>
+    </div>
+    <?php
+    include('../includes/footer.html');
+    ?>
 </body>
 
 </html>

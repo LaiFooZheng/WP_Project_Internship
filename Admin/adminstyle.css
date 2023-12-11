@@ -1,0 +1,34 @@
+#echo {
+    display: block;
+    color: green;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+
+#updatelist {
+    display: block;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+
+#updatelist a:hover {
+    font-size: larger;
+    transition: 0.5s;
+}
+
+#userlist {
+    display: block;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+
+#userlist a:hover {
+    font-size: larger;
+    transition: 0.5s;
+}
