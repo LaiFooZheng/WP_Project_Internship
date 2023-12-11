@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Application</title>
+
+    <link rel="shortcut icon" href="../img/aidslogoshortcut.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 </head>
 
@@ -13,7 +15,7 @@
 <?php
 require_once("../config.php");
 session_start();
-$column= false;
+$column = false;
 $app_id = $_GET["app_id"];
 $userlevel = $_GET["userlevel"];
 $id = $_SESSION['USER_ID'];
@@ -21,7 +23,7 @@ if (isset($_GET["id"])) {
     $id = $_GET["id"];
 }
 if (isset($_GET["column"])) {
-    $column= true;  
+    $column = true;
 }
 
 $query = mysqli_query($conn, "SELECT * FROM users where userid = '$id'") or die(mysqli_connect_error());
@@ -62,10 +64,8 @@ $address = $row["address"];
     <h1 style="text-align: center; margin-top: 50px;">Edit Application of Internship Session</h1>
     <label style="display: block; text-align: end;">
         <b>Date :</b>
-        <input id="remove-border" style="font-size:15px; font-weight: bold;" type="text" name="applicationdate"
-            value="<?php date_default_timezone_set("Asia/Kuala_Lumpur");
-            echo date("d-M-Y"); ?>"
-            readonly />
+        <input id="remove-border" style="font-size:15px; font-weight: bold;" type="text" name="applicationdate" value="<?php date_default_timezone_set("Asia/Kuala_Lumpur");
+        echo date("d-M-Y"); ?>" readonly />
     </label>
 
     <div class="container my-5">

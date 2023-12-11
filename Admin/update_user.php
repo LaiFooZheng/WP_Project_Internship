@@ -1,9 +1,9 @@
 <head>
-<link rel="stylesheet" href="../Admin/adminstyle.css">
+    <link rel="stylesheet" href="../Admin/adminstyle.css">
 </head>
-    <?php
-    include('../includes/headerAdmin.html');
-    ?>
+<?php
+include('../includes/headerAdmin.html');
+?>
 <?php
 require_once("../config.php");
 
@@ -45,13 +45,15 @@ mysqli_close($conn);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="../img/aidslogoshortcut.png" type="image/x-icon">
+
 </head>
 
 <body>
-    
+
     <BR><BR>
     <section id="userlist">
-    <a href="user_list.php" id="userlist" style="text-decoration: none;">Click here to see the user list</a>
+        <a href="user_list.php" id="userlist" style="text-decoration: none;">Click here to see the user list</a>
     </section>
     <?php
     include('../includes/footer.html');

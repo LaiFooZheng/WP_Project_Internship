@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../img/2.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="../img/aidslogoshortcut.png" type="image/x-icon">
+
 </head>
 
 <body>
@@ -19,7 +21,8 @@
     <form action="search_user.php" method="post">
         <div class="admin-links">
             <b> <a href="user_list.php"><label class="ad-homepage-btn">View All Users</label></a>
-                <a href="../Coordinator/application_list.php"><label class="ad-homepage-btn">View Student Applications</label></a>
+                <a href="../Coordinator/application_list.php"><label class="ad-homepage-btn">View Student
+                        Applications</label></a>
             </b>
         </div>
     </form>
@@ -44,5 +47,5 @@
     include('../includes/footer.html');
     ?>
 </body>
-    
+
 </html>

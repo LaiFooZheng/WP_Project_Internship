@@ -8,6 +8,7 @@
     <title>Search Student Profile</title>
     <!-- Bootstrap Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="../img/aidslogoshortcut.png" type="image/x-icon">
 
 </head>
 

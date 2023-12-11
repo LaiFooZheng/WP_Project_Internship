@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cousine&family=Montserrat:ital,wght@0,400;1,200&display=swap"
         rel="stylesheet">
+    <link rel="shortcut icon" href="../img/aidslogoshortcut.png" type="image/x-icon">
 
 </head>
 
@@ -43,9 +44,9 @@
                 <?php
                 require_once("../config.php");
                 require_once("../functions.php");
-                session_start() ;
+                session_start();
 
-                $userID = $_SESSION['USER_ID']; 
+                $userID = $_SESSION['USER_ID'];
 
                 // Retrieve data from table
                 $array = array();
@@ -92,4 +93,5 @@
     ?>
 
 </body>
+
 </html>

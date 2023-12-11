@@ -39,10 +39,10 @@
                 session_start();
 
                 // Retrieve data for the logged-in student
-                $studentId = $_SESSION['USER_ID']; 
+                $studentId = $_SESSION['USER_ID'];
 
-                  // Check if the student ID is set
-                  if (isset($studentId)) {
+                // Check if the student ID is set
+                if (isset($studentId)) {
                     require_once("../config.php");
                     require_once("../functions.php");
 
@@ -59,9 +59,9 @@
                         if (mysqli_num_rows($sql) > 0) {
                             // Output data of each row
                             while ($row = mysqli_fetch_array($sql)) {
-                              $array['userid'] = $row['fk_userid'];
-                              $profile = getUsersData($array['userid']);
-                              echo "
+                                $array['userid'] = $row['fk_userid'];
+                                $profile = getUsersData($array['userid']);
+                                echo "
                               <tr>
                                   <td>$row[applicationid]</td>
                                   <td>$profile[name]</td>
@@ -82,15 +82,15 @@
                     } else {
                         echo "Query execution failed.";
                     }
-                  } else {
+                } else {
                     echo "Student ID is not set.";
-                  }
+                }
 
                 ?>
             </tbody>
         </table>
     </div>
-    
+
     <?php
     include('../includes/footer.html');
     ?>

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Form</title>
+    <link rel="shortcut icon" href="../img/aidslogoshortcut.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 </head>
 
@@ -24,10 +25,11 @@ $row = mysqli_fetch_array($query);
     ?>
 
     <h1 style="text-align: center; margin-top: 50px;">Application of Internship Session</h1>
-      <label style="display: block; text-align: end;">
+    <label style="display: block; text-align: end;">
         <b>Date :</b>
-        <input id="remove-border" style="font-size:15px; font-weight: bold;" type="text" name="applicationdate" value="<?php date_default_timezone_set("Asia/Kuala_Lumpur");																																echo date("d-M-Y"); ?>" readonly />
-      </label>
+        <input id="remove-border" style="font-size:15px; font-weight: bold;" type="text" name="applicationdate" value="<?php date_default_timezone_set("Asia/Kuala_Lumpur");
+        echo date("d-M-Y"); ?>" readonly />
+    </label>
 
     <div class="container my-5">
         <h2>Personal Information</h2>
@@ -65,8 +67,10 @@ $row = mysqli_fetch_array($query);
                 <label class="col-sm-3 col-form-label">Gender</label>
                 <div class="col-sm-6">
                     <select class="form-select" name="gender">
-                        <option value="Male" <?php if (isset($row['gender']) && $row['gender'] === 'Male') echo 'selected'; ?>>Male</option>
-                        <option value="Female" <?php if (isset($row['gender']) && $row['gender'] === 'Female') echo 'selected'; ?>>Female</option>
+                        <option value="Male" <?php if (isset($row['gender']) && $row['gender'] === 'Male')
+                            echo 'selected'; ?>>Male</option>
+                        <option value="Female" <?php if (isset($row['gender']) && $row['gender'] === 'Female')
+                            echo 'selected'; ?>>Female</option>
                     </select>
                 </div>
             </div>
@@ -93,7 +97,7 @@ $row = mysqli_fetch_array($query);
                 </div>
             </div>
 
-        <h2>Company Information</h2>
+            <h2>Company Information</h2>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Company Name</label>
                 <div class="col-sm-6">
@@ -114,8 +118,8 @@ $row = mysqli_fetch_array($query);
                     <input type="text" class="form-control" name="companyEmail" value="<?php if (isset($row['companyEmail']))
                         echo htmlspecialchars($row['companyEmail']); ?>" required>
                 </div>
-            </div>        
-        <h2>Internship Information</h2>
+            </div>
+            <h2>Internship Information</h2>
 
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Department Name</label>
@@ -145,82 +149,82 @@ $row = mysqli_fetch_array($query);
                         echo htmlspecialchars($row['endDate']); ?>" onkeyup="check2()" required>
                 </div>
             </div>
-            
-            </div>
-            <div class="row mb-3">
-                <div class="offset-sm-3 col-sm-3 d-grid">
-                    <button type="submit" class="btn btn-success" onclick="return Validate()">Submit</button>
-                </div>
 
-                <script type="text/javascript">
-					function Validate() {
-						if(check1() === true && check2() === true) {
-							return true;
-						} 
-						else if (check1() === true && check2() === false) {
-							alert("The end date is invalid!");
-							return false;
-						}
-						else if (check1() === false && check2() === true) {
-							alert("The start date is invalid!");
-							return false;
-						}
-						else {
-							alert("The start and end date is invalid!");
-							return false;
-						}
-					}
+    </div>
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-success" onclick="return Validate()">Submit</button>
+        </div>
 
-					function check1() {
-						var Startdate = new Date(document.getElementById('start_date').value);
-						var now = new Date();
-						if(now > Startdate) {
-							return false;
-						}
-						else {
-							return true;
-						}
-					}
+        <script type="text/javascript">
+            function Validate() {
+                if (check1() === true && check2() === true) {
+                    return true;
+                }
+                else if (check1() === true && check2() === false) {
+                    alert("The end date is invalid!");
+                    return false;
+                }
+                else if (check1() === false && check2() === true) {
+                    alert("The start date is invalid!");
+                    return false;
+                }
+                else {
+                    alert("The start and end date is invalid!");
+                    return false;
+                }
+            }
 
-					function check2() {
-						var Startdate = new Date(document.getElementById('start_date').value);
-						var Enddate = new Date(document.getElementById('end_date').value);
-						if(Enddate < Startdate) {
-							return false;
-						}
-						else {
-							return true;
-						}
-					}
+            function check1() {
+                var Startdate = new Date(document.getElementById('start_date').value);
+                var now = new Date();
+                if (now > Startdate) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
 
-					var check1 = function() {
-						var Startdate = new Date(document.getElementById('start_date').value);
-						var now = new Date();
-						if(now > Startdate) {
-							document.getElementById('message1').style.color = 'red';
-							document.getElementById('message1').innerHTML = 'Start date should be later than application date.';
-							return false;
-						}
-						else {
-							return true;
-						}
-					}
+            function check2() {
+                var Startdate = new Date(document.getElementById('start_date').value);
+                var Enddate = new Date(document.getElementById('end_date').value);
+                if (Enddate < Startdate) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
 
-					var check2 = function() {
-						var Startdate = new Date(document.getElementById('start_date').value);
-						var Enddate = new Date(document.getElementById('end_date').value);
-						if(Enddate < Startdate) {
-							document.getElementById('message2').style.color = 'red';
-							document.getElementById('message2').innerHTML = 'End date should be later than start date.';
-							return false;
-						}
-						else {
-							return true;
-						}
-					}
-				</script>
-            </div>
-        </form>
+            var check1 = function () {
+                var Startdate = new Date(document.getElementById('start_date').value);
+                var now = new Date();
+                if (now > Startdate) {
+                    document.getElementById('message1').style.color = 'red';
+                    document.getElementById('message1').innerHTML = 'Start date should be later than application date.';
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+
+            var check2 = function () {
+                var Startdate = new Date(document.getElementById('start_date').value);
+                var Enddate = new Date(document.getElementById('end_date').value);
+                if (Enddate < Startdate) {
+                    document.getElementById('message2').style.color = 'red';
+                    document.getElementById('message2').innerHTML = 'End date should be later than start date.';
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+        </script>
+    </div>
+    </form>
     </div>
 
     <?php

@@ -9,10 +9,13 @@
     <!-- Bootstrap Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../Admin/adminstyle.css">
+    <link rel="shortcut icon" href="../img/aidslogoshortcut.png" type="image/x-icon">
+
 </head>
 
 <body>
-    <link rel="stylesheet" href="../Admin/adminstyle.css"><?php
+    <link rel="stylesheet" href="../Admin/adminstyle.css">
+    <?php
     include('../includes/headerAdmin.html');
     ?>
     <div class="container my-5">
@@ -79,7 +82,7 @@
                 } else {
                     echo "<a id='echo' style='color:black; text-align:left;'>0 results</a>";
                 }
-                
+
                 mysqli_close($conn);
                 ?>
             </tbody>

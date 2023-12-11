@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Application</title>
+
+    <link rel="shortcut icon" href="../img/aidslogoshortcut.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 </head>
 
@@ -14,15 +16,15 @@
 require_once("../config.php");
 session_start();
 $app_id = $_GET["app_id"];
-$column= false;
+$column = false;
 
-$userlevel= $_GET["userlevel"];
+$userlevel = $_GET["userlevel"];
 $id = $_SESSION['USER_ID'];
 if (isset($_GET["id"])) {
-    $id = $_GET["id"];  
+    $id = $_GET["id"];
 }
 if (isset($_GET["column"])) {
-    $column= true;  
+    $column = true;
 }
 
 $query = mysqli_query($conn, "SELECT * FROM users where userid = '$id'") or die(mysqli_connect_error());
@@ -59,28 +61,30 @@ $nationality = $row3["nationality"];
 
 $applicationstatus = $row4["applicationstatus"]
 
-?>
+    ?>
 
 <body>
     <?php
 
     if ($userlevel == 1) {
         include('../includes/headerAdmin.html');
-    } 
-    else if($userlevel == 2) {
+    } else if ($userlevel == 2) {
         include('../includes/headerCoordinator.html');
-    }else if ($userlevel == 3) {
+    } else if ($userlevel == 3) {
         include('../includes/headerStudent.html');
-        
+
     }
     // include('../includes/headerStudent.html');
     ?>
-    
+
     <h1 style="text-align: center; margin-top: 50px;">View Application of Internship Session</h1>
-      <label style="display: block; text-align: end;">
+    <label style="display: block; text-align: end;">
         <b>Date :</b>
-        <input id="remove-border" style="font-size:15px; font-weight: bold;" type="text" name="applicationdate" value="<?php date_default_timezone_set("Asia/Kuala_Lumpur");																																echo date("d-M-Y"); ?>" readonly />
-      </label>
+        <input id="remove-border" style="font-size:15px; font-weight: bold;" type="text" name="applicationdate"
+            value="<?php date_default_timezone_set("Asia/Kuala_Lumpur");
+            echo date("d-M-Y"); ?>"
+            readonly />
+    </label>
 
     <div class="container my-5">
         <h2>Personal Information</h2>
@@ -88,132 +92,132 @@ $applicationstatus = $row4["applicationstatus"]
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Full Name</label>
                 <div class="col-sm-6">
-                  <?php echo $fullname;?>
+                    <?php echo $fullname; ?>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Matric Number</label>
                 <div class="col-sm-6">
-                <?php echo $matricnumber;?>
+                    <?php echo $matricnumber; ?>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Age</label>
                 <div class="col-sm-6">
-                  <?php echo $age;?>
+                    <?php echo $age; ?>
                 </div>
             </div>
             <!-- maybe add a password confirmation field -->
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Phone Number</label>
                 <div class="col-sm-6">
-                  <?php echo $phone;?>
+                    <?php echo $phone; ?>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Gender</label>
                 <div class="col-sm-6">
-                <?php echo $gender;?>
+                    <?php echo $gender; ?>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-6">
-                <?php echo $email;?>
+                    <?php echo $email; ?>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Address</label>
                 <div class="col-sm-6">
-                  <?php echo $address;?>
+                    <?php echo $address; ?>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Nationality</label>
                 <div class="col-sm-6">
-                <?php echo $nationality;?>
+                    <?php echo $nationality; ?>
                 </div>
             </div>
 
-        <h2>Company Information</h2>
+            <h2>Company Information</h2>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Company Name</label>
                 <div class="col-sm-6">
-                <?php echo $companyname;?>
+                    <?php echo $companyname; ?>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Contact Number</label>
                 <div class="col-sm-6">
-                <?php echo $companycontactno;?>
+                    <?php echo $companycontactno; ?>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-6">
-                <?php echo $companyemail;?>
+                    <?php echo $companyemail; ?>
                 </div>
-            </div>        
-        <h2>Internship Information</h2>
+            </div>
+            <h2>Internship Information</h2>
 
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Department Name</label>
                 <div class="col-sm-6">
-                <?php echo $department;?>
+                    <?php echo $department; ?>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Job Title</label>
                 <div class="col-sm-6">
-                <?php echo $jobtitle;?>
+                    <?php echo $jobtitle; ?>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Start Date</label>
                 <div class="col-sm-6">
-                <?php echo $startdate;?>
+                    <?php echo $startdate; ?>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">End Date</label>
                 <div class="col-sm-6">
-                <?php echo $enddate;?>
+                    <?php echo $enddate; ?>
                 </div>
             </div>
-            
+
+    </div>
+
+    <?php if ($userlevel == 3): ?>
+
+        <div class="row mb-3">
+            <div class="offset-sm-3 col-sm-3 d-grid">
+                <?php if ($applicationstatus == 'Approved' || $applicationstatus == 'Rejected'): ?>
+                    <a href="report_approved.php" class="btn btn-primary">Return</a>
+                <?php else: ?>
+                    <a href="student_application_list.php" class="btn btn-primary">Return</a>
+                <?php endif; ?>
             </div>
+        </div>
+    <?php elseif ($userlevel == 1): ?>
+        <div class="row mb-3">
+            <div class="offset-sm-3 col-sm-3 d-grid">
+                <a href="../Coordinator/application_list.php" class="btn btn-primary">Return</a>
+            </div>
+        </div>
+    <?php elseif ($userlevel == 2): ?>
+        <div class="row mb-3">
+            <div class="offset-sm-3 col-sm-3 d-grid">
+                <?php if ($column == true): ?>
+                    <a href="../Coordinator/coordinator_page.php" class="btn btn-primary">Return</a>
+                <?php else: ?>
+                    <a href="../Coordinator/application_list.php" class="btn btn-primary">Return</a>
+                <?php endif; ?>
+            </div>
+        </div>
 
-            <?php if ($userlevel == 3): ?>
-                
-                <div class="row mb-3">
-                    <div class="offset-sm-3 col-sm-3 d-grid">
-                        <?php if ($applicationstatus == 'Approved' || $applicationstatus == 'Rejected'): ?>
-                            <a href="report_approved.php" class="btn btn-primary">Return</a>
-                        <?php else: ?>
-                            <a href="student_application_list.php" class="btn btn-primary">Return</a>
-                        <?php endif; ?>
-                    </div>
-                    </div>
-                <?php elseif ($userlevel == 1): ?>
-                    <div class="row mb-3">
-                    <div class="offset-sm-3 col-sm-3 d-grid">
-                        <a href="../Coordinator/application_list.php" class="btn btn-primary">Return</a>
-                    </div>
-                    </div>
-                <?php elseif ( $userlevel == 2): ?>
-                    <div class="row mb-3">
-                    <div class="offset-sm-3 col-sm-3 d-grid">
-                    <?php if ($column == true): ?>
-                            <a href="../Coordinator/coordinator_page.php" class="btn btn-primary">Return</a>
-                        <?php else: ?>
-                            <a href="../Coordinator/application_list.php" class="btn btn-primary">Return</a>
-                        <?php endif; ?>
-                    </div>
-                    </div>
-
-            <?php endif; ?>
-        </form>
+    <?php endif; ?>
+    </form>
     </div>
     <?php
     include('../includes/footer.html');
