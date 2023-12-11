@@ -8,6 +8,7 @@
     <title>Application List</title>
     <!-- Bootstrap Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="../img/aidslogoshortcut.png" type="image/x-icon">
 
 </head>
 
@@ -17,8 +18,10 @@
     ?>
 
     <div class="container my-5">
-        <h2 style="text-align:center; font-weight:bold">Student Application Report List</h2>
+        <h2 style="text-align:center; font-weight:bold">Student Application Report List (Notification)</h2>
         <p style="text-align:center; font-weight:bold"><i>Students Can Only View their own Applications</i></p>
+        <p style="text-align:center; font-weight:bold"><i>This also serve as a "NOTIFICAION" of sorts as the student can
+                check their status and be notified about it whether it is approved or rejected.</i></p>
         <!-- <a class="btn btn-danger" href="../login.html" role="button">LOGOUT</a> -->
         <br>
         <table class="table">
@@ -51,7 +54,7 @@
                     $query = mysqli_query($conn, "SELECT * FROM login WHERE fk_userid = $studentId") or die(mysqli_connect_error());
                     $row2 = mysqli_fetch_assoc($query);
                     $userlevel = $row2['userlevel'];
-                    $select = "SELECT * FROM practical_training WHERE fk_userid = $studentId AND applicationstatus = 'Approved'OR applicationstatus = 'Rejected'";
+                    $select = "SELECT * FROM practical_training WHERE fk_userid = $studentId AND (applicationstatus = 'Approved'OR applicationstatus = 'Rejected')";
                     $sql = mysqli_query($GLOBALS['conn'], $select);
 
                     // Check if the query executed successfully
@@ -61,8 +64,10 @@
                             while ($row = mysqli_fetch_array($sql)) {
                                 $array['userid'] = $row['fk_userid'];
                                 $profile = getUsersData($array['userid']);
+                                $rowClass = ($row['applicationstatus'] == 'Approved') ? 'table-success' : 'table-danger';
+
                                 echo "
-                              <tr>
+                              <tr class='{$rowClass}'>
                                   <td>$row[applicationid]</td>
                                   <td>$profile[name]</td>
                                   <td>$row[applicationdate]</td>  
