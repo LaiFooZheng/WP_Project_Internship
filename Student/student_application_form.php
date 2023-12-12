@@ -101,8 +101,24 @@ $row = mysqli_fetch_array($query);
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Company Name</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="companyName" value="<?php if (isset($row['companyName']))
-                        echo htmlspecialchars($row['companyName']); ?>" required>
+                    <select class="form-select" name="companyName">
+                        <option value="Google" <?php if (isset($row['companyName']) && $row['companyName'] === 'Google')
+                            echo 'selected'; ?>>Google</option>
+                        <option value="Intel" <?php if (isset($row['companyName']) && $row['companyName'] === 'Intel')
+                            echo 'selected'; ?>>Intel</option>
+                        <option value="Microsoft" <?php if (isset($row['companyName']) && $row['companyName'] === 'Microsoft')
+                            echo 'selected'; ?>>Microsoft</option>
+                        <option value="IBM" <?php if (isset($row['companyName']) && $row['companyName'] === 'IBM')
+                            echo 'selected'; ?>>IBM</option>
+                        <option value="Meta" <?php if (isset($row['companyName']) && $row['companyName'] === 'Meta')
+                            echo 'selected'; ?>>Meta</option>
+                        <option value="Apple" <?php if (isset($row['companyName']) && $row['companyName'] === 'Apple')
+                            echo 'selected'; ?>>Apple</option>
+                    </select>
+                    <?php
+                    /*<input type="text" class="form-control" name="companyName" value="<?php if (isset($row['companyName']))
+                        echo htmlspecialchars($row['companyName']); ?>" required> */
+                    ?>
                 </div>
             </div>
             <div class="row mb-3">
@@ -131,8 +147,20 @@ $row = mysqli_fetch_array($query);
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Job Title</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="jobTitle" value="<?php if (isset($row['jobTitle']))
-                        echo htmlspecialchars($row['jobTitle']); ?>" required>
+                    <select class="form-select" name="jobTitle">
+                        <option value="Front-End" <?php if (isset($row['jobTitle']) && $row['jobTitle'] === 'Front-End')
+                            echo 'selected'; ?>>Front-End</option>
+                        <option value="Back-End" <?php if (isset($row['jobTitle']) && $row['jobTitle'] === 'Back-End')
+                            echo 'selected'; ?>>Back-End</option>
+                        <option value="Full-Stack" <?php if (isset($row['jobTitle']) && $row['jobTitle'] === 'Full-Stack')
+                            echo 'selected'; ?>>Full-Stack</option>
+                        <option value="UIUX-Designer" <?php if (isset($row['jobTitle']) && $row['jobTitle'] === 'UIUX-Designer')
+                            echo 'selected'; ?>>UIUX-Designer</option>
+                    </select>
+                    <?php
+                    /*<input type="text" class="form-control" name="jobTitle" value="<?php if (isset($row['jobTitle']))
+                        echo htmlspecialchars($row['jobTitle']); ?>" required>*/
+                    ?>
                 </div>
             </div>
             <div class="row mb-3">
